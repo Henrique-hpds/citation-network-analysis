@@ -322,6 +322,6 @@ if __name__ == "__main__":
     client = Neo4jLocalClient(uri, username, password, database)
     clear_database(client)
     create_schema(client)
-    populate(client)
+    #populate(client)
     
     client.close()
