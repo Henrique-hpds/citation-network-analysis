@@ -23,15 +23,10 @@ statements = [
     "FOR (v:Venue) "
     "REQUIRE v.openalex_id IS UNIQUE",
 
-    # Topics
-    "CREATE CONSTRAINT topic_openalex_id_unique IF NOT EXISTS "
-    "FOR (t:Topic) "
-    "REQUIRE t.openalex_id IS UNIQUE",
-
-    # Funders
-    "CREATE CONSTRAINT funder_openalex_id_unique IF NOT EXISTS "
-    "FOR (f:Funder) "
-    "REQUIRE f.openalex_id IS UNIQUE",
+    # Subfields
+    "CREATE CONSTRAINT subfield_openalex_id_unique IF NOT EXISTS "
+    "FOR (s:Subfield) "
+    "REQUIRE s.openalex_id IS UNIQUE",
 
     # -------------------------------------------------------------------------
     # ÍNDICES DE PROPRIEDADE — nós
@@ -68,12 +63,9 @@ statements = [
     "CREATE INDEX venue_issn_l IF NOT EXISTS "
     "FOR (v:Venue) ON (v.issn_l)",
 
-    # Topic
-    "CREATE INDEX topic_field_id IF NOT EXISTS "
-    "FOR (t:Topic) ON (t.field_id)",
-
-    "CREATE INDEX topic_domain_id IF NOT EXISTS "
-    "FOR (t:Topic) ON (t.domain_id)",
+    # Subfield
+    "CREATE INDEX subfield_field_id IF NOT EXISTS "
+    "FOR (s:Subfield) ON (s.field_id)",
 
     # -------------------------------------------------------------------------
     # ÍNDICES DE PROPRIEDADE — relacionamentos
@@ -86,8 +78,4 @@ statements = [
     # AUTHORED_BY: quickly find corresponding authors
     "CREATE INDEX authored_by_is_corresponding IF NOT EXISTS "
     "FOR ()-[r:AUTHORED_BY]-() ON (r.is_corresponding)",
-
-    # HAS_TOPIC: distinguish primary from secondary topics
-    "CREATE INDEX has_topic_is_primary IF NOT EXISTS "
-    "FOR ()-[r:HAS_TOPIC]-() ON (r.is_primary)",
 ]

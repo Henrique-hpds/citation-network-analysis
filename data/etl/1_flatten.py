@@ -22,21 +22,14 @@ from pathlib import Path
 
 def extract_article(raw: dict) -> dict:
     """Return a flat dict with only the Article node fields."""
-    loc = raw.get("primary_location") or {}
-    oa  = raw.get("open_access") or {}
-
     return {
-        "openalex_id":       raw.get("id", "").replace("https://openalex.org/", ""),
-        "doi":               raw.get("doi"),
-        "title":             raw.get("display_name"),
-        "publication_year":  raw.get("publication_year"),
-        "publication_date":  raw.get("publication_date"),
-        "language":          raw.get("language"),
-        "type":              raw.get("type"),
-        "cited_by_count":    raw.get("cited_by_count", 0),
-        "is_retracted":      raw.get("is_retracted", False),
-        "is_oa":             oa.get("is_oa", False),
-        "oa_status":         oa.get("oa_status"),
+        "openalex_id":      raw.get("id", "").replace("https://openalex.org/", ""),
+        "doi":              raw.get("doi"),
+        "title":            raw.get("display_name"),
+        "publication_year": raw.get("publication_year"),
+        "type":             raw.get("type"),
+        "cited_by_count":   raw.get("cited_by_count", 0),
+        "is_retracted":     raw.get("is_retracted", False),
     }
 
 
@@ -88,48 +81,38 @@ def extract_venue(raw: dict) -> dict | None:
         "display_name": source.get("display_name"),
         "issn_l":       source.get("issn_l"),
         "type":         source.get("type"),
-        "is_oa":        source.get("is_oa", False),
-        "is_in_doaj":   source.get("is_in_doaj", False),
     }
 
 
-def extract_topics(raw: dict) -> list[dict]:
-    """Return a list of Topic dicts from the topics array."""
-    topics = []
-    primary_id = (raw.get("primary_topic") or {}).get("id", "")
+def extract_subfields(raw: dict) -> list[dict]:
+    """
+    Return a deduplicated list of Subfield dicts from topics[].
+    Each subfield carries its parent field for hierarchy queries.
+
+    Example output:
+        {
+            "openalex_id":  "subfields/1707",
+            "display_name": "Computer Vision and Pattern Recognition",
+            "field_id":     "fields/17",
+            "field_name":   "Computer Science",
+        }
+    """
+    seen = set()
+    subfields = []
     for t in raw.get("topics", []):
-        tid = t.get("id", "")
-        if not tid:
-            continue
         subfield = t.get("subfield") or {}
-        field    = t.get("field") or {}
-        domain   = t.get("domain") or {}
-        topics.append({
-            "openalex_id":    tid.replace("https://openalex.org/", ""),
-            "display_name":   t.get("display_name"),
-            "subfield_id":    subfield.get("id", "").replace("https://openalex.org/", ""),
-            "subfield_name":  subfield.get("display_name"),
-            "field_id":       field.get("id", "").replace("https://openalex.org/", ""),
-            "field_name":     field.get("display_name"),
-            "domain_id":      domain.get("id", "").replace("https://openalex.org/", ""),
-            "domain_name":    domain.get("display_name"),
-            "is_primary":     tid == primary_id,
-        })
-    return topics
-
-
-def extract_funders(raw: dict) -> list[dict]:
-    """Return a list of Funder dicts."""
-    funders = []
-    for f in raw.get("funders", []):
-        fid = f.get("id", "")
-        if not fid:
+        sid = subfield.get("id", "")
+        if not sid or sid in seen:
             continue
-        funders.append({
-            "openalex_id":  fid.replace("https://openalex.org/", ""),
-            "display_name": f.get("display_name"),
+        seen.add(sid)
+        field = t.get("field") or {}
+        subfields.append({
+            "openalex_id":  sid.replace("https://openalex.org/", ""),
+            "display_name": subfield.get("display_name"),
+            "field_id":     field.get("id", "").replace("https://openalex.org/", ""),
+            "field_name":   field.get("display_name"),
         })
-    return funders
+    return subfields
 
 
 def extract_relationships(raw: dict) -> dict:
@@ -162,21 +145,15 @@ def extract_relationships(raw: dict) -> dict:
     source = loc.get("source") or {}
     venue_id = source.get("id", "").replace("https://openalex.org/", "") or None
 
-    primary_id = (raw.get("primary_topic") or {}).get("id", "")
-    topic_ids  = [
-        {
-            "topic_id":   t.get("id", "").replace("https://openalex.org/", ""),
-            "is_primary": t.get("id", "") == primary_id,
-        }
-        for t in raw.get("topics", [])
-        if t.get("id")
-    ]
-
-    funder_ids = [
-        f.get("id", "").replace("https://openalex.org/", "")
-        for f in raw.get("funders", [])
-        if f.get("id")
-    ]
+    # Collect unique subfield IDs referenced by this article's topics
+    seen_sf = set()
+    subfield_ids = []
+    for t in raw.get("topics", []):
+        sf = t.get("subfield") or {}
+        sid = sf.get("id", "")
+        if sid and sid not in seen_sf:
+            seen_sf.add(sid)
+            subfield_ids.append(sid.replace("https://openalex.org/", ""))
 
     cited_works = [
         w.replace("https://openalex.org/", "")
@@ -184,12 +161,11 @@ def extract_relationships(raw: dict) -> dict:
     ]
 
     return {
-        "article_id":   article_id,
-        "authored_by":  authored_by,
-        "venue_id":     venue_id,
-        "topic_ids":    topic_ids,
-        "funder_ids":   funder_ids,
-        "cited_works":  cited_works,
+        "article_id":    article_id,
+        "authored_by":   authored_by,
+        "venue_id":      venue_id,
+        "subfield_ids":  subfield_ids,
+        "cited_works":   cited_works,
     }
 
 
@@ -249,7 +225,7 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     # One sub-directory per entity type keeps things tidy for the loader
-    for subdir in ("articles", "authors", "institutions", "venues", "topics", "funders", "relationships"):
+    for subdir in ("articles", "authors", "institutions", "venues", "subfields", "relationships"):
         (output_dir / subdir).mkdir(exist_ok=True)
 
     writers = {
@@ -257,8 +233,7 @@ def main():
         "authors":       BatchWriter(output_dir / "authors",        "authors",       args.batch_size),
         "institutions":  BatchWriter(output_dir / "institutions",   "institutions",  args.batch_size),
         "venues":        BatchWriter(output_dir / "venues",         "venues",        args.batch_size),
-        "topics":        BatchWriter(output_dir / "topics",         "topics",        args.batch_size),
-        "funders":       BatchWriter(output_dir / "funders",        "funders",       args.batch_size),
+        "subfields":     BatchWriter(output_dir / "subfields",      "subfields",     args.batch_size),
         "relationships": BatchWriter(output_dir / "relationships",  "relationships", args.batch_size),
     }
 
@@ -282,8 +257,7 @@ def main():
         writers["authors"].add(extract_authors(raw))
         writers["institutions"].add(extract_institutions(raw))
         writers["venues"].add(extract_venue(raw))
-        writers["topics"].add(extract_topics(raw))
-        writers["funders"].add(extract_funders(raw))
+        writers["subfields"].add(extract_subfields(raw))
         writers["relationships"].add(extract_relationships(raw))
 
         if i % 10_000 == 0:

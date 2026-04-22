@@ -73,23 +73,13 @@ SET
   v.is_in_doaj   = r.is_in_doaj
 """
 
-MERGE_TOPIC = """
+MERGE_SUBFIELD = """
 UNWIND $rows AS r
-MERGE (t:Topic {openalex_id: r.openalex_id})
+MERGE (s:Subfield {openalex_id: r.openalex_id})
 SET
-  t.display_name  = r.display_name,
-  t.subfield_id   = r.subfield_id,
-  t.subfield_name = r.subfield_name,
-  t.field_id      = r.field_id,
-  t.field_name    = r.field_name,
-  t.domain_id     = r.domain_id,
-  t.domain_name   = r.domain_name
-"""
-
-MERGE_FUNDER = """
-UNWIND $rows AS r
-MERGE (f:Funder {openalex_id: r.openalex_id})
-SET f.display_name = r.display_name
+  s.display_name = r.display_name,
+  s.field_id     = r.field_id,
+  s.field_name   = r.field_name
 """
 
 # Relationships — each requires the nodes to already exist (run nodes first)
@@ -126,21 +116,12 @@ MATCH (v:Venue      {openalex_id: r.venue_id})
 MERGE (art)-[:PUBLISHED_IN]->(v)
 """
 
-REL_HAS_TOPIC = """
+REL_HAS_SUBFIELD = """
 UNWIND $rows AS r
 MATCH (art:Article {openalex_id: r.article_id})
-UNWIND r.topic_ids AS ti
-MATCH (t:Topic {openalex_id: ti.topic_id})
-MERGE (art)-[rel:HAS_TOPIC]->(t)
-SET rel.is_primary = ti.is_primary
-"""
-
-REL_FUNDED_BY = """
-UNWIND $rows AS r
-MATCH (art:Article {openalex_id: r.article_id})
-UNWIND r.funder_ids AS fid
-MATCH (f:Funder {openalex_id: fid})
-MERGE (art)-[:FUNDED_BY]->(f)
+UNWIND r.subfield_ids AS sid
+MATCH (s:Subfield {openalex_id: sid})
+MERGE (art)-[:HAS_SUBFIELD]->(s)
 """
 
 REL_AFFILIATED_WITH = """
@@ -213,8 +194,7 @@ def main():
         load_batches(session, MERGE_AUTHOR,       list((flat / "authors").glob("*.json")),       args.batch_size, "Authors")
         load_batches(session, MERGE_INSTITUTION,  list((flat / "institutions").glob("*.json")),  args.batch_size, "Institutions")
         load_batches(session, MERGE_VENUE,        list((flat / "venues").glob("*.json")),        args.batch_size, "Venues")
-        load_batches(session, MERGE_TOPIC,        list((flat / "topics").glob("*.json")),        args.batch_size, "Topics")
-        load_batches(session, MERGE_FUNDER,       list((flat / "funders").glob("*.json")),       args.batch_size, "Funders")
+        load_batches(session, MERGE_SUBFIELD,     list((flat / "subfields").glob("*.json")),     args.batch_size, "Subfields")
 
     if args.skip_rels:
         print("\n--skip-rels set — skipping relationships.")
@@ -227,8 +207,7 @@ def main():
     with driver.session() as session:
         load_batches(session, REL_AUTHORED_BY,    rel_files, args.batch_size, "AUTHORED_BY")
         load_batches(session, REL_PUBLISHED_IN,   rel_files, args.batch_size, "PUBLISHED_IN")
-        load_batches(session, REL_HAS_TOPIC,      rel_files, args.batch_size, "HAS_TOPIC")
-        load_batches(session, REL_FUNDED_BY,      rel_files, args.batch_size, "FUNDED_BY")
+        load_batches(session, REL_HAS_SUBFIELD,   rel_files, args.batch_size, "HAS_SUBFIELD")
         load_batches(session, REL_AFFILIATED_WITH,rel_files, args.batch_size, "AFFILIATED_WITH")
 
         print("\n  CITES edges (this will take a while on large datasets)...")

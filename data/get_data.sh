@@ -2,10 +2,10 @@
 
 set -euo pipefail
 
-if [ -f ../.env ]; then
+if [ -f .env ]; then
   # Export variables from .env for local script execution.
   set -a
-  . ../.env
+  . .env
   set +a
 fi
 
@@ -13,5 +13,7 @@ fi
 
 openalex download \
   --api-key ${OPENALEX_API_KEY} \
-  --output ./data/responses/openalex_cs/ \
-  --filter "primary_topic.field.id:17,cited_by_count:>50,type:article,authorships.countries:BR|US"
+  --output ./data/responses_1/ \
+  --nested \
+  --resume \
+  --filter "primary_topic.field.id:17,cited_by_count:>10,type:article" #,authorships.institutions.id:i181391015"
