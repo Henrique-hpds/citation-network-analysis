@@ -1,0 +1,13 @@
+ponto da api que dá várias faculdades
+ordenar por algum campo que indique importância
+percentil 1, 5, 10, 15, 20, ...
+(talvez requisição por ror)
+
+
+
+usp
+ufscar
+unesp
+ufrj
+ufmg
+ita

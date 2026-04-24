@@ -1,0 +1,851 @@
+2026	2025	INSTITUTION
+1	1	Massachusetts Institute of Technology (MIT)
+2	2	Stanford University
+3	3	Carnegie Mellon University
+4	5	University of Oxford
+4	4	National University of Singapore (NUS)
+6	8	University of California, Berkeley (UCB)
+7	7	Harvard University
+8	9	University of Cambridge
+9	6	Nanyang Technological University, Singapore (NTU Singapore)
+10	10	ETH Zurich
+11	11	Tsinghua University
+12	22	Imperial College London
+13	12	University of Toronto
+14	13	Princeton University
+15	15	EPFL – École polytechnique fédérale de Lausanne
+16	14	Peking University
+17	18	Cornell University
+18		Institute of Science Tokyo
+19	16	University of California, Los Angeles (UCLA)
+20	24	UCL
+21	26	Yale University
+22	27	Columbia University
+22	23	The University of Edinburgh
+22	19	University of Washington
+22	17	New York University (NYU)
+26	35	Technical University of Munich
+27	33	University of Waterloo
+27	31	University of British Columbia
+27	21	The University of Hong Kong
+30	20	Shanghai Jiao Tong University
+31	46	The University of Melbourne
+32	34	University of Illinois Urbana-Champaign
+33	24	The Hong Kong University of Science and Technology
+34	31	Zhejiang University
+34	40	Georgia Institute of Technology
+36	41	University of Pennsylvania
+37	27	The Chinese University of Hong Kong (CUHK)
+38	36	The University of Sydney
+39	41	University of Texas at Austin
+40	52	California Institute of Technology (Caltech)
+41	30	The University of Tokyo
+42	37	University of California, San Diego (UCSD)
+43	48	McGill University
+44	76	Indian Institute of Technology Bombay (IITB)
+45	64	Indian Institute of Technology Delhi (IITD)
+46	57	King's College London
+47	44	Seoul National University
+48	37	Australian National University (ANU)
+49	39	Fudan University
+50	56	Delft University of Technology
+51	62	Monash University
+52	41	University of Michigan-Ann Arbor
+52	53	Sorbonne University
+54	46	The University of New South Wales (UNSW Sydney)
+55	62	University of Technology Sydney
+56	70	Institut Polytechnique de Paris
+56	55	Université de Montréal
+58	67	The University of Manchester
+58	53	Politecnico di Milano
+60	80	Tecnológico de Monterrey
+61	69	KTH Royal Institute of Technology
+62	45	University of Amsterdam
+63	51	KU Leuven
+64	50	University of Chicago
+65	110	Indian Institute of Technology Kanpur (IITK)
+66	73	Purdue University
+67	66	Johns Hopkins University
+67	110	Indian Institute of Technology Kharagpur (IIT-KGP)
+67	59	City University of Hong Kong (CityUHK)
+70	76	The Hong Kong Polytechnic University
+71	94	Universidade de São Paulo
+72	78	Sapienza University of Rome
+73	49	University of Southern California
+73		Adelaide University
+73	74	Université Paris-Saclay
+76	96	Technische Universität Berlin (TU Berlin)
+76	58	Université PSL
+78	84	Queen Mary University of London
+79	107	Indian Institute of Technology Madras (IITM)
+80	61	Yonsei University
+80	80	Nanjing University
+82	67	Korea University
+82	59	University of Science and Technology of China
+84	83	The University of Warwick
+85	82	Harbin Institute of Technology
+86	110	Vellore Institute of Technology (VIT), Vellore, India
+86	64	Universiti Malaya (UM)
+88	91	National Taiwan University (NTU)
+88	74	University of Maryland, College Park
+90	89	Beijing Institute of Technology
+91	72	Duke University
+91	89	Ludwig-Maximilians-Universität München
+93	96	The University of Auckland
+93	86	Lomonosov Moscow State University
+95	93	Alma Mater Studiorum - Università di Bologna
+95	100	Kyoto University
+95	107	Boston University
+95	102	Pennsylvania State University
+99	98	The University of Queensland
+99	91	Technische Universität Wien
+101	156	Macquarie University (Sydney, Australia)
+102	127	Universidad Nacional Autónoma de México  (UNAM)
+103	105	University of Alberta
+104	70	King Abdulaziz University (KAU)
+105	119	Universidade Estadual de Campinas (Unicamp)
+106	100	University of Jordan
+106	105	KFUPM
+108	134	Arizona State University
+109	99	King Saud University
+110	110	KIT, Karlsruhe Institute of Technology
+111	102	Eindhoven University of Technology
+111	134	University of Bristol
+111	107	Brown University
+114	122	RWTH Aachen University
+114	164	National University of Sciences & Technology (NUST) Islamabad
+116	110	Indian Institute of Science (IISc) Bangalore
+117	167	RMIT University
+118	118	Northwestern University
+118	146	Universidad de Chile
+118	119	University of Zurich
+121	110	Trinity College Dublin, The University of Dublin
+121	86	Pohang University of Science And Technology (POSTECH)
+121	122	University of California, Irvine
+124	139	Singapore Management University
+124	110	Politecnico di Torino
+124	146	King Abdullah University of Science & Technology (KAUST)
+127	132	Universitat de Barcelona
+127	184	University of Illinois Chicago (UIC)
+127	174	University of Birmingham
+130	149	Virginia Polytechnic Institute and State University
+130	152	Universiti Teknologi Malaysia
+130	142	University of Glasgow
+130	144	Universitat Politècnica de Catalunya · BarcelonaTech (UPC)
+134	130	National Tsing Hua University - NTHU
+134	175	Universidad Politécnica de Madrid (UPM)
+136	156	Cairo University
+137	127	University of Massachusetts Amherst
+137	156	Khalifa University
+139	130	Pontificia Universidad Católica de Chile (UC)
+140	146	Texas A&M University
+141	110	University of Wisconsin-Madison
+142	122	Aalto University
+143	163	Chalmers University of Technology
+144	139	University of Pisa
+144	201-250	Duy Tan University
+146	88	Wuhan University
+147	104	University of Copenhagen
+147	181	Middle East Technical University
+149	129	Sun Yat-sen University
+149	201-250	Waseda University
+149	136	Humboldt-Universität zu Berlin
+152	197	Northeastern University
+152	201-250	Istanbul Technical University
+154	167	Beihang University (former BUAA)
+154	149	Technion - Israel Institute of Technology
+156	171	Technical University of Darmstadt
+156	132	Lancaster University
+158	84	Huazhong University of Science and Technology
+158	201-250	University of Liverpool
+160	165	Universiti Sains Malaysia (USM)
+160	201-250	Qatar University
+160	142	Utrecht University
+160	201-250	Queensland University of Technology (QUT)
+160	201-250	Universidad de los Andes
+160	156	Vrije Universiteit Amsterdam
+160	201-250	Indian Institute of Technology Roorkee (IITR)
+160	125	Université catholique de Louvain (UCLouvain)
+168	188	Complutense University of Madrid
+169	136	Michigan State University
+169	191	The University of Sheffield
+171	451-500	Multimedia University (MMU)
+172	201-250	Oxford Brookes University
+172	201-250	Jordan University of Science & Technology
+172	161	University of Florida
+172	191	Queen's University at Kingston
+172	179	Deakin University
+172	175	University College Dublin
+178	201-250	University of Southampton
+178	201-250	University of Electronic Science and Technology of China
+180	201-250	COMSATS University Islamabad
+180	167	Newcastle University
+180	78	Xi’an Jiaotong University
+183	183	The University of Osaka
+183	139	University of Oslo
+185	191	University of Nottingham
+185	175	University of Helsinki
+185	201-250	Universidade Federal do Rio de Janeiro
+188	201-250	University of Leeds
+188	167	University of Warsaw
+190	184	University of Surrey
+190	119	Aarhus University
+190	151	Technical University of Denmark
+193	180	Universiti Kebangsaan Malaysia (UKM)
+194	152	Leiden University
+194	251-300	Keio University
+194	172	Universidad Carlos III de Madrid (UC3M)
+194	251-300	Indian Institute of Technology Guwahati (IITG)
+198	184	University of Granada
+198	201-250	University of California, Santa Barbara (UCSB)
+200	301-350	Birla Institute of Technology and Science, Pilani
+201-250	188	Rutgers University–New Brunswick
+201-250	251-300	Durham University
+201-250	351-400	South China University of Technology
+201-250	144	University of Vienna
+201-250	201-250	University of York
+201-250	191	Università di Padova
+201-250	201-250	National Cheng Kung University (NCKU)
+201-250	251-300	University of Lisbon
+201-250	251-300	Universitat Politecnica de Valencia
+201-250	201-250	IMT Atlantique
+201-250	201-250	University of Chinese Academy of Sciences (UCAS)
+201-250	201-250	University of Virginia
+201-250	251-300	University of Ottawa
+201-250	201-250	National Yang Ming Chiao Tung University (NYCU Taiwan)
+201-250	165	Universität Heidelberg
+201-250	201-250	Simon Fraser University
+201-250	201-250	Czech Technical University in Prague
+201-250	201-250	Universidad de Buenos Aires (UBA)
+201-250	152	Sungkyunkwan University (SKKU)
+201-250	201-250	National Technical University of Athens
+201-250	201-250	Université Grenoble Alpes
+201-250	251-300	Tongji University
+201-250	201-250	Uppsala University
+201-250	172	University of North Carolina at Chapel Hill
+201-250	251-300	Technische Universität Dresden
+201-250	184	HSE University
+201-250	201-250	Instituto Politécnico Nacional (IPN)
+201-250	197	Rheinische Friedrich-Wilhelms-Universität Bonn
+201-250	201-250	Norwegian University of Science And Technology
+201-250	351-400	Sichuan University
+201-250	201-250	University of California, Davis
+201-250	175	Universitat Autònoma de Barcelona
+201-250	156	The Ohio State University
+201-250	251-300	Universiti Putra Malaysia (UPM)
+201-250	197	Bauman Moscow State Technical University
+201-250	161	Hanyang University
+201-250	201-250	University of Trento
+201-250	251-300	Federal University of Minas Gerais (UFMG)
+201-250	201-250	Universidad Autónoma de Madrid
+201-250	251-300	American University of Beirut (AUB)
+201-250	201-250	Freie Universitaet Berlin
+201-250	251-300	Tohoku University
+201-250	251-300	Renmin (People's) University of China
+201-250	201-250	University of Calgary
+201-250	251-300	Shanghai University
+201-250	251-300	Beijing University of Posts and Telecommunications
+201-250	251-300	Universidad Nacional de Colombia
+201-250	301-350	Universiti Teknologi PETRONAS (UTP)
+201-250	201-250	Taylor's University
+201-250	201-250	Swansea University
+201-250	251-300	University of Pittsburgh
+201-250	651-700	Al-Ahliyya Amman University
+251-300	201-250	Rice University
+251-300	451-500	UCSI University
+251-300	251-300	Queen's University Belfast
+251-300	201-250	Warsaw University of Technology
+251-300	181	Moscow Institute of Physics and Technology (MIPT / Moscow Phystech)
+251-300	351-400	University of Bath
+251-300	201-250	University of Milan
+251-300	251-300	Charles University
+251-300	190	Sejong University
+251-300	251-300	National and Kapodistrian University of Athens
+251-300	251-300	Victoria University of Wellington
+251-300	251-300	Western University
+251-300	751-850	Indian Institute of Technology BHU Varanasi (IIT BHU Varanasi)
+251-300	251-300	Beijing Normal University
+251-300	451-500	Shenzhen University
+251-300	301-350	Pontifícia Universidade Católica do Rio de Janeiro
+251-300	251-300	The University of Western Australia
+251-300	301-350	University of Porto
+251-300	251-300	National Taiwan University of Science and Technology (Taiwan Tech)
+251-300	197	Tel Aviv University
+251-300	251-300	Boğaziçi University
+251-300	251-300	University of Delhi
+251-300	301-350	Universität Stuttgart
+251-300	301-350	University of Science and Technology Beijing
+251-300	251-300	United Arab Emirates University
+251-300	201-250	University of Groningen
+251-300	301-350	Singapore University of Technology and Design
+251-300	251-300	Beijing Jiaotong University
+251-300	251-300	Anna University
+251-300	301-350	Koç University
+251-300	152	ITMO University
+251-300	301-350	Chandigarh University
+251-300	201-250	Ghent University
+251-300	201-250	Lund University
+251-300	301-350	Bilkent University
+251-300	251-300	Xiamen University
+251-300	251-300	Concordia University
+251-300	351-400	Stony Brook University, State University of New York
+251-300	251-300	Kyung Hee University
+251-300	251-300	Loughborough University
+251-300	501-550	University of Macau
+251-300	251-300	McMaster University
+251-300	351-400	SRM Institute of Science and Technology
+251-300	301-350	Université Paris Cité
+251-300	251-300	Eberhard Karls Universität Tübingen
+251-300	501-550	Rochester Institute of Technology (RIT)
+251-300	351-400	University of Sharjah
+251-300	191	Aalborg University
+251-300	351-400	USI - Università della Svizzera italiana
+251-300	301-350	Université Paris 1 Panthéon-Sorbonne
+251-300	251-300	Universitat Pompeu Fabra (Barcelona)
+251-300	191	Indiana University Bloomington
+251-300	351-400	Southeast University
+251-300	351-400	Universitas Indonesia
+301-350	251-300	Saarland University
+301-350	451-500	Lebanese American University
+301-350	401-450	Yarmouk University
+301-350	401-450	Northwestern Polytechnical University
+301-350	201-250	North Carolina State University
+301-350	301-350	University of Central Florida
+301-350	351-400	University of Colorado Boulder
+301-350	301-350	Aristotle University of Thessaloniki
+301-350	251-300	Stockholm University
+301-350	251-300	University of Texas at Dallas
+301-350	401-450	Southern University of Science and Technology (SUSTech)
+301-350	351-400	UNESP
+301-350	401-450	York University
+301-350	251-300	Cardiff University
+301-350	201-250	University of Minnesota (System)
+301-350	351-400	Brunel University of London
+301-350	251-300	École Normale Supérieure de Lyon
+301-350	251-300	Graz University of Technology
+301-350	301-350	University of Victoria (UVic)
+301-350	301-350	Kyushu University
+301-350	301-350	Université de Rennes 1
+301-350	351-400	University of Strathclyde
+301-350	251-300	Institut polytechnique de Grenoble - Grenoble Institute of Technology
+301-350	201-250	Ajman University
+301-350	351-400	Nagoya University
+301-350	301-350	Universität Hamburg
+301-350	301-350	Dublin City University
+301-350	301-350	George Washington University
+301-350	201-250	RUDN University
+301-350	601-650	Asia Pacific University of Technology and Innovation (APU) Malaysia
+301-350	301-350	The University of Arizona
+301-350	351-400	Heriot-Watt University
+301-350	501-550	University of Genoa
+301-350	301-350	University of Rome "Tor Vergata"
+301-350	451-500	Pontificia Universidad Javeriana
+301-350	301-350	Friedrich-Alexander-Universität Erlangen-Nürnberg
+301-350	301-350	Institut National des Sciences Appliquées de Lyon (INSA)
+301-350	401-450	University of Tsukuba
+301-350	401-450	Bina Nusantara University (BINUS)
+301-350	301-350	Linköping University
+301-350	201-250	Saint Petersburg State University
+301-350	451-500	Escuela Superior Politécnica del Litoral (ESPOL)
+301-350	301-350	University of Geneva
+301-350	301-350	University of Notre Dame
+301-350	451-500	Japan Advanced Institute of Science and Technology
+301-350	301-350	Bocconi University
+301-350	351-400	University of Tartu
+301-350	401-450	Thapar Institute of Engineering & Technology
+351-400	401-450	Tianjin University
+351-400	251-300	Carleton University
+351-400	601-650	Al-Balqa Applied University
+351-400	301-350	University of Rochester
+351-400	351-400	Universidade Federal do Rio Grande Do Sul
+351-400	301-350	Illinois Institute of Technology
+351-400	301-350	Budapest University of Technology and Economics
+351-400	301-350	Swinburne University of Technology
+351-400	401-450	University of Oulu
+351-400	251-300	University of Twente
+351-400	551-600	East China Normal University
+351-400	501-550	University of Calabria
+351-400	351-400	Washington State University
+351-400	401-450	University of Engineering & Technology (UET) Lahore
+351-400	401-450	University of Galway
+351-400	351-400	Ain Shams University in Cairo (ASU, Cairo)
+351-400	301-350	Albert-Ludwigs-Universitaet Freiburg
+351-400	351-400	Chulalongkorn University
+351-400	401-450	University of the Punjab
+351-400	351-400	University at Buffalo SUNY
+351-400	351-400	Chung-Ang University (CAU)
+351-400	351-400	Universidade Nova de Lisboa
+351-400	301-350	University of Utah
+351-400	701-750	Indian Institute of Technology Hyderabad (IITH)
+351-400	301-350	Maastricht University
+351-400	401-450	Sultan Qaboos University
+351-400	351-400	University of Turin
+351-400	251-300	University of Wollongong
+351-400	251-300	Universite libre de Bruxelles
+351-400	351-400	Georgia State University
+351-400	351-400	Université Paul Sabatier Toulouse III
+351-400	451-500	Symbiosis International (Deemed University)
+351-400	501-550	University of Sussex
+351-400		City St George’s, University of London
+351-400	301-350	The Hebrew University of Jerusalem
+351-400	701-750	Management and Science University
+351-400	401-450	University of Antwerp
+351-400	351-400	Universidad Técnica Federico Santa María (USM)
+351-400	451-500	University of Bordeaux
+351-400	451-500	Universidad de Guadalajara (UDG)
+351-400	351-400	Nankai University
+351-400	351-400	Vrije Universiteit Brussel (VUB)
+351-400	451-500	Gadjah Mada University
+351-400	401-450	Hong Kong Baptist University
+351-400	301-350	Tampere University
+351-400	351-400	Tallinn University of Technology (TalTech)
+351-400	401-450	American University of Sharjah
+351-400	401-450	Sabanci University
+401-450	351-400	Xidian University
+401-450	351-400	Radboud University
+401-450	301-350	University College Cork
+401-450	451-500	University of Salerno
+401-450	601-650	Al-Farabi Kazakh National University
+401-450	551-600	Institut Teknologi Sepuluh Nopember (ITS Surabaya)
+401-450	701-750	Nottingham Trent University
+401-450	301-350	Sharif University of Technology
+401-450	351-400	University of Leicester
+401-450	301-350	University of Naples - Federico II
+401-450	601-650	Universidade Federal de Pernambuco (UFPE)
+401-450	401-450	Auckland University of Technology (AUT)
+401-450	551-600	Coventry University
+401-450	351-400	Washington University in St. Louis
+401-450	251-300	Daegu Gyeongbuk Institute of Science and Technology (DGIST)
+401-450	401-450	Curtin University
+401-450	401-450	TU Dortmund University
+401-450	551-600	Indraprastha Institute of Information Technology, Delhi
+401-450	451-500	University of Exeter
+401-450	401-450	Aix-Marseille University
+401-450		Nanjing University of Posts and Telecommunications
+401-450	351-400	University of Canterbury | Te Whare Wānanga o Waitaha
+401-450	251-300	The University of Newcastle, Australia (UON)
+401-450	451-500	Pontificia Universidad Catolica del Peru (PUCP)
+401-450	401-450	Leibniz University Hannover
+401-450	501-550	Indian Institute of Technology Indore
+401-450	351-400	Iowa State University
+401-450	351-400	University of Tehran
+401-450		INTI International University
+401-450	401-450	Université du Québec
+401-450	451-500	Lahore University of Management Sciences (LUMS)
+401-450	301-350	University of St.Gallen
+401-450	451-500	Wroclaw University of Science and Technology (Wrocław Tech)
+401-450	401-450	University of Houston
+401-450	401-450	Dartmouth College
+401-450	451-500	Jadavpur University
+401-450	401-450	University of Luxembourg
+401-450	351-400	La Trobe University
+401-450	301-350	Quaid-i-Azam University
+401-450	401-450	Kyungpook National University
+401-450	501-550	Hacettepe University
+401-450	451-500	Viet Nam National University Ho Chi Minh City (VNU-HCM)
+401-450	301-350	University of Bergen
+401-450	401-450	Florida State University
+401-450	451-500	Dalhousie University
+401-450	751-850	Macau University of Science and Technology
+401-450	301-350	Griffith University
+451-500	451-500	Bangladesh University of Engineering and Technology
+451-500	451-500	The American University in Cairo
+451-500	401-450	University of St Andrews
+451-500	401-450	University of Turku
+451-500	351-400	Princess Sumaya University for Technology
+451-500	351-400	King Khalid University
+451-500	501-550	University of the Philippines
+451-500	351-400	University of Coimbra
+451-500	401-450	Beijing University of Technology
+451-500	501-550	Université Côte d'Azur
+451-500	501-550	Manchester Metropolitan University
+451-500	401-450	Brno University of Technology
+451-500	651-700	Chitkara University
+451-500	351-400	Hamad Bin Khalifa University (HBKU)
+451-500	551-600	Institut Teknologi Bandung (ITB)
+451-500		Azerbaijan State Oil and Industry University
+451-500	451-500	Alexandria University
+451-500	451-500	University of Otago
+451-500	351-400	University of Bern
+451-500	501-550	Sogang University
+451-500	551-600	Lovely Professional University (LPU)
+451-500	501-550	University of Waikato
+451-500		Macao Polytechnic University
+451-500	401-450	Universidad de Sevilla
+451-500	401-450	University of Gothenburg
+451-500	501-550	University of California, Santa Cruz
+451-500	501-550	University of Limerick
+451-500	501-550	UWE Bristol (University of the West of England)
+451-500	201-250	Shandong University
+451-500	601-650	Nanjing University of Aeronautics and Astronautics
+451-500	451-500	Amity University
+451-500	451-500	Imam Abdulrahman Bin Faisal University (IAU)
+451-500	451-500	University of Milano-Bicocca
+451-500	451-500	Université de Lille
+451-500	601-650	University of Aveiro
+451-500	751-850	German Jordanian University
+451-500	551-600	International Islamic University Malaysia (IIUM)
+451-500	501-550	George Mason University
+451-500	451-500	National Technical University of Ukraine "Igor Sikorsky Kyiv Polytechnic Institute"
+451-500	501-550	Florida International University
+451-500	451-500	University of Patras
+451-500	501-550	King Faisal University
+451-500	651-700	University of Johannesburg
+451-500	501-550	City University of New York
+451-500	401-450	University of Salamanca
+451-500	301-350	Vanderbilt University
+451-500	651-700	Zagazig University
+451-500	601-650	Ruhr-Universität Bochum
+451-500	601-650	Manipal Academy of Higher Education, Manipal, Karnataka, India
+451-500	501-550	Western Sydney University
+451-500	651-700	Guru Gobind Singh Indraprastha University
+501-550	451-500	Royal Holloway, University of London
+501-550	601-650	The University of Georgia
+501-550		Ibn Tofail University
+501-550	451-500	Eötvös Loránd University
+501-550	401-450	Goethe-University Frankfurt am Main
+501-550	501-550	Mansoura University
+501-550	401-450	Jagiellonian University
+501-550	501-550	University of Ljubljana
+501-550		Sant'Anna - Scuola Universitaria Superiore Pisa
+501-550	551-600	Technological University Dublin
+501-550		University of Anbar
+501-550	601-650	Binghamton University SUNY
+501-550	401-450	Cranfield University
+501-550	351-400	University of Cape Town
+501-550	301-350	American University of the Middle East
+501-550		Applied Science Private University - Jordan
+501-550	651-700	Universidad Nacional de La Plata (UNLP)
+501-550	401-450	Wageningen University & Research
+501-550	351-400	National Research Nuclear University MEPhI (Moscow Engineering Physics Institute)
+501-550	551-600	University of Missouri, Columbia
+501-550	401-450	Emory University
+501-550	401-450	Essex, University of
+501-550	751-850	Sunway University
+501-550	501-550	Athens University of Economics and Business
+501-550	751-850	Indian Institute of Information Technology, Allahabad
+501-550	451-500	Tilburg University
+501-550	501-550	AGH University of Krakow
+501-550	501-550	Ural Federal University - UrFU
+501-550	551-600	Universität Bremen
+501-550	701-750	Satbayev University
+501-550	601-650	Université de Tunis El Manar
+501-550	501-550	Jawaharlal Nehru University
+501-550	601-650	Nanjing University of Science and Technology
+501-550	401-450	Ajou University
+501-550	501-550	Johannes Kepler University Linz
+501-550	651-700	Daffodil International University
+501-550	501-550	Universitat de Valencia
+501-550	401-450	University of Florence
+501-550	451-500	University of Baghdad
+501-550	451-500	Taras Shevchenko National University of Kyiv
+501-550	451-500	University of Göttingen
+501-550	551-600	National University of Science and Technology POLITEHNICA Bucharest
+501-550	401-450	University of Reading
+501-550	701-750	New Jersey Institute of Technology (NJIT)
+501-550	301-350	National Taipei University of Technology
+501-550	501-550	Ritsumeikan University
+501-550	451-500	Kazan (Volga region) Federal University
+501-550	501-550	Rensselaer Polytechnic Institute
+501-550	751-850	Dongguk University
+501-550	501-550	Université de Strasbourg
+551-600	301-350	Zayed University
+551-600	451-500	Université Claude Bernard Lyon 1
+551-600	501-550	Hokkaido University
+551-600	551-600	Universiti Utara Malaysia (UUM)
+551-600	651-700	Harbin Engineering University
+551-600	451-500	Temple University
+551-600	501-550	University of South Florida
+551-600	451-500	National Sun Yat-sen University (NSYSU)
+551-600	751-850	Al-Azhar University
+551-600	301-350	Lebanese University
+551-600	501-550	Dalian University of Technology
+551-600	551-600	Ca' Foscari University of Venice
+551-600	551-600	Universidad Panamericana (UP)
+551-600	751-850	L.N. Gumilyov Eurasian National University (ENU)
+551-600	401-450	Peter the Great St. Petersburg Polytechnic University
+551-600	651-700	The University of Tennessee, Knoxville
+551-600	751-850	Stevens Institute of Technology
+551-600	501-550	Masaryk University
+551-600	401-450	University of Kent
+551-600	501-550	Kingston University, London
+551-600	551-600	Hanoi University of Science and Technology
+551-600	601-650	Université de Liège
+551-600	451-500	Université Laval
+551-600	351-400	Hunan University
+551-600	601-650	International Institute of Information Technology - Hyderabad (IIIT-H)
+551-600	601-650	Weizmann Institute of Science
+551-600	551-600	Vietnam National University, Hanoi
+551-600	751-850	North South University
+551-600	601-650	National Taiwan Normal University (NTNU)
+551-600	751-850	University of Southern Queensland
+551-600	651-700	Universitat Ramon Llull
+551-600	651-700	Kaunas University of Technology
+551-600	301-350	Ulsan National Institute of Science and Technology (UNIST)
+551-600	601-650	University of Belgrade
+551-600	651-700	National University of Defense Technology
+551-600	551-600	University of Dhaka
+551-600		Sohar University
+551-600	451-500	University of California, Riverside
+551-600		Amman Arab University
+551-600	651-700	Universidad de Antioquia
+551-600	501-550	Georgetown University
+551-600		Zhejiang University of Technology
+551-600	551-600	Yildiz Technical University
+551-600	601-650	De La Salle University
+551-600	501-550	Syracuse University
+551-600	351-400	Novosibirsk State University
+551-600		Gachon University (Seoul, Korea)
+551-600		Chungbuk National University
+551-600	601-650	Universidade Federal de São Carlos (UFSCar)
+551-600	751-850	Université Polytechnique Hauts-de-France
+551-600	551-600	Universiti Teknologi MARA - UiTM
+601-650	401-450	Gwangju Institute of Science and Technology (GIST)
+601-650	451-500	Ben-Gurion University of The Negev
+601-650	551-600	University of Kentucky
+601-650	551-600	Massey University
+601-650	601-650	Catania University
+601-650	551-600	University of Lausanne
+601-650	701-750	Universidad Rey Juan Carlos
+601-650	401-450	Indian Statistical Institute
+601-650	651-700	University of Aberdeen
+601-650	651-700	The University of Lahore
+601-650	601-650	Texas Tech University
+601-650	501-550	Plekhanov Russian University of Economics
+601-650		Inha University
+601-650	601-650	Abu Dhabi University
+601-650	551-600	Universidade Federal do Paraná - UFPR
+601-650		Baku State University
+601-650	401-450	Case Western Reserve University
+601-650	551-600	University of Cologne
+601-650	451-500	Universidad de Santiago de Chile (USACH)
+601-650	551-600	Central South University
+601-650	601-650	Princess Nourah bint Abdulrahman University
+601-650	551-600	Toronto Metropolitan University (formerly Ryerson University)
+601-650	751-850	Bahria University, Islamabad. Pakistan
+601-650	651-700	Asia University Taiwan
+601-650	551-600	Prince Sultan University
+601-650	551-600	University of Crete
+601-650	501-550	University of South Carolina
+601-650	551-600	Mahidol University
+601-650	601-650	Amrita Vishwa Vidyapeetham
+601-650	601-650	Gdańsk University of Technology
+601-650		Galgotias University
+601-650		Mutah University
+601-650	601-650	Technical University of Cluj-Napoca
+601-650	401-450	Aston University
+601-650	551-600	National Central University
+601-650	501-550	Université de Montpellier
+601-650	701-750	Seoul National University of Science and Technology
+601-650	551-600	Northumbria University at Newcastle
+601-650	501-550	University of Bucharest
+601-650	501-550	National Research Tomsk Polytechnic University
+601-650	751-850	Ghulam Ishaq Khan (GIK), Institute of Engineering Sciences and Technology
+601-650	651-700	Universidad Autónoma de Nuevo León
+601-650	451-500	Umm Al-Qura University
+601-650	751-850	Jamia Millia Islamia
+601-650	651-700	Universidad Adolfo Ibáñez
+601-650	501-550	De Montfort University
+601-650	551-600	Lviv Polytechnic National University
+601-650	651-700	Gazi Üniversitesi
+601-650		Institut National des Sciences Appliquées de Rennes (INSA)
+651-700	551-600	University of Basel
+651-700	601-650	University of Bradford
+651-700	701-750	University of Pretoria
+651-700	551-600	The University of Texas at Arlington
+651-700	551-600	University of Münster
+651-700		Université des Sciences et de la Technologie Houari Boumediène (USTHB)
+651-700	651-700	Ulster University
+651-700	601-650	University of Cincinnati
+651-700		École Centrale de Lyon
+651-700	701-750	University of Miami
+651-700		Ankara Üniversitesi
+651-700	201-250	Jilin University
+651-700	551-600	The Open University
+651-700	651-700	UNIVERSITI TEKNIKAL MALAYSIA MELAKA
+651-700	551-600	Pontificia Universidad Católica de Valparaíso
+651-700	701-750	Universitas Airlangga
+651-700	501-550	WU (Vienna University of Economics and Business)
+651-700		Universidad de Málaga
+651-700	651-700	Tufts University
+651-700		Ho Chi Minh City University of Technology (HUTECH)
+651-700		Soochow University
+651-700	301-350	Al Ain University
+651-700	651-700	Nantes Université
+651-700	601-650	Victoria University
+651-700	501-550	Canadian University Dubai
+651-700		National Institute of Technology Karnataka (NITK)
+651-700	551-600	Ewha Womans University
+651-700	651-700	University of Minho
+651-700	601-650	Iran University of Science and Technology
+651-700	601-650	Universidade de Brasília
+651-700	751-850	Slovak University of Technology in Bratislava
+651-700	701-750	Universidad de Concepción
+651-700	751-850	Guangdong University of Technology
+651-700	701-750	Università degli studi Roma Tre
+651-700	551-600	Université Toulouse 1 Capitole
+651-700	601-650	Kharkiv National University of Radio Electronics
+651-700		American International University-Bangladesh (AIUB)
+651-700	551-600	University of Navarra
+651-700		Universidade de Vigo
+651-700	701-750	Universidade de Santiago de Compostela
+651-700		National Dong Hwa University
+651-700	651-700	Vilnius University
+651-700		IT University of Copenhagen
+651-700	601-650	University of Szeged
+651-700		Air University Pakistan
+651-700	651-700	Edinburgh Napier University
+651-700	401-450	National University of Computer and Emerging Sciences
+651-700		Industrial University of Ho Chi Minh City (IUH)
+701-750	551-600	Telkom University
+701-750	501-550	Babes-Bolyai University
+701-750	601-650	Université de Lorraine
+701-750	551-600	Pusan National University
+701-750	701-750	Chiang Mai University
+701-750	651-700	Universiti Tenaga Nasional (UNITEN)
+701-750		MOTILAL NEHRU NATIONAL INSTITUTE OF TECHNOLOGY ALLAHABAD
+701-750	351-400	Beirut Arab University
+701-750		Universidad Peruana de Ciencias Aplicadas (UPC)
+701-750	551-600	University of the Basque Country
+701-750	351-400	Prince Mohammad Bin Fahd university
+701-750	751-850	Pakistan Institute of Engineering and Applied Sciences (PIEAS)
+701-750		Edith Cowan University
+701-750	601-650	Capital University – Egypt
+701-750	751-850	Escuela Politécnica Nacional
+701-750	651-700	Universidad de Zaragoza
+701-750	651-700	Riga Technical University
+701-750	601-650	Nara Institute of Science and Technology 
+701-750	751-850	German University in Cairo
+701-750	751-850	Universidad Nacional de Córdoba - UNC
+701-750		Delta University for Science and Technology
+701-750	751-850	Universidade Federal do Ceará (UFC)
+701-750	601-650	University of Saskatchewan
+701-750	651-700	Università degli Studi di Pavia
+701-750	651-700	University of New Brunswick
+701-750	701-750	University of Modena and Reggio Emilia
+701-750	751-850	Florida Atlantic University - Boca Raton
+701-750		Van Lang University
+701-750		Azerbaijan Technical University
+701-750	651-700	Istanbul University
+701-750	551-600	Amirkabir University of Technology
+701-750		Lingnan University, Hong Kong
+701-750	551-600	Universität Innsbruck
+701-750	701-750	Panjab University, Chandigarh
+701-750		Chongqing University
+701-750	651-700	University of Guelph
+701-750	401-450	Imam Mohammad Ibn Saud Islamic University – IMSIU
+701-750		Near East University
+701-750	701-750	Umea University
+701-750	751-850	Obuda University
+701-750		American University of Ras Al Khaimah
+701-750	751-850	Universidad de Córdoba
+701-750	651-700	Poznan University of Technology
+701-750		Jinan University (China)
+701-750	701-750	University of Connecticut
+701-750	701-750	Instituto Tecnológico Autónomo de México (ITAM)
+701-750	751-850	Southwest Jiaotong University
+701-750	601-650	Middlesex University
+701-750	551-600	Lulea University of Technology
+701-750	451-500	Universität Mannheim
+701-750	701-750	Banaras Hindu University
+751-850	651-700	Wuhan University of Technology
+751-850	601-650	University of Maryland, Baltimore County
+751-850	651-700	EURECOM
+751-850		Universidad de Las Américas (UDLA) Ecuador
+751-850	651-700	Skolkovo Institute of Science and Technology Skoltech
+751-850	601-650	University of Eastern Finland
+751-850	751-850	University of Canberra
+751-850		University of Thessaly
+751-850		Ecole Centrale de Nantes
+751-850	751-850	Universidad Andrés Bello
+751-850	701-750	International Islamic University, Islamabad (IIU)
+751-850		University of Engineering and Technology, Taxila
+751-850	751-850	Brigham Young University
+751-850		Universidad de la República (Udelar)
+751-850		University of Sfax
+751-850	701-750	Colorado State University
+751-850	601-650	University of Portsmouth
+751-850	601-650	University of Kaiserslautern-Landau (RPTU)
+751-850		Benha University - Egypt
+751-850		University of Siena
+751-850		Prince Sattam Bin Abdulaziz University
+751-850		Hangzhou Dianzi University
+751-850	651-700	Technische Universität Braunschweig
+751-850	751-850	Wayne State University
+751-850		Aligarh Muslim University
+751-850		Hong Kong Metropolitan University
+751-850	701-750	V. N. Karazin Kharkiv National University
+751-850		Assiut University
+751-850	651-700	University of Huddersfield
+751-850	751-850	Universidad de Castilla-La Mancha
+751-850	751-850	Universiti Tunku Abdul Rahman (UTAR)
+751-850	751-850	National Institute of Technology, Tiruchirappalli
+751-850	751-850	Oregon State University
+751-850		Universität Paderborn
+751-850		Sathyabama Institute of Science and Technology (Deemed to be University)
+751-850	701-750	Ulm University
+751-850	651-700	Liverpool John Moores University
+751-850	701-750	University of Zagreb
+751-850		Universidad EAFIT
+751-850		École de technologie supérieure
+751-850	651-700	National Chung Hsing University
+751-850	751-850	University of Iowa
+751-850		Silesian University of Technology
+751-850		Eastern Mediterranean University
+751-850	701-750	University of Bari
+751-850	701-750	Stellenbosch University
+751-850		National Technical University Kharkiv Polytechnic Institute
+751-850	751-850	King Mongkut's University of Technology Thonburi
+751-850		Julius-Maximilians-Universität Würzburg
+751-850	651-700	École Centrale de Lille
+751-850		Azerbaijan State University of Economics (UNEC)
+751-850	651-700	Northeastern University (China)
+751-850		Scuola Normale Superiore
+751-850		University of Mumbai
+751-850	601-650	Universidade Federal de Santa Catarina
+751-850	701-750	VILNIUS TECH (Vilnius Gediminas Technical University)
+751-850	701-750	University of Debrecen
+751-850	701-750	Louisiana State University
+751-850		Kalasalingam Academy of Research and Education
+751-850		Institut National Polytechnique de Toulouse
+751-850	751-850	VSB - Technical University of Ostrava
+751-850	751-850	Feng Chia University
+751-850	551-600	Université de Technologie de Compiègne (UTC)
+751-850	601-650	University of Cyprus (UCY)
+751-850	751-850	East China University of Science and Technology
+751-850	451-500	Jouf University
+751-850		Future University in Egypt
+751-850	701-750	The Hashemite University
+751-850	751-850	National Chengchi University
+751-850	701-750	Academy of Sciences of the Czech Republic
+751-850	701-750	Universität Konstanz
+751-850	601-650	Universiti Malaysia Pahang Al-Sultan Abdullah (UMPSA)
+751-850	651-700	William & Mary
+751-850	751-850	Universität Potsdam
+751-850	501-550	University of Manitoba
+751-850	601-650	University of Southern Denmark (SDU)
+751-850		Marwadi University
+751-850	601-650	Ton Duc Thang University
+751-850	751-850	Kuwait University
+751-850	701-750	Technical University of Crete
+751-850	751-850	University of Klagenfurt
+751-850	751-850	University of Salford
+751-850	751-850	Thammasat University
+751-850	751-850	Sofia University "St. Kliment Ohridski"
+751-850	651-700	Tomsk State University
+751-850	751-850	Universiti Tun Hussein Onn  Malaysia (UTHM)
+751-850	701-750	Yuan Ze University
+751-850	751-850	Xi'an Jiaotong Liverpool University
+751-850		University of Management and Technology (UMT) Pakistan
+751-850		Saveetha Institute of Medical And Technical Sciences (SIMATS)
+751-850	601-650	University of Mons
+751-850		University of Malta
+751-850	751-850	University of Piraeus
+751-850		Mohamed Bin Zayed University of Artificial Intelligence
+751-850		University of Alicante
+751-850	751-850	Kyushu Institute of Technology
+751-850		China University of Mining and Technology
+751-850	601-650	Saudi Electronic University
+751-850	551-600	University of Jyväskylä
+751-850	701-750	Hasselt University
+751-850	751-850	Worcester Polytechnic Institute
