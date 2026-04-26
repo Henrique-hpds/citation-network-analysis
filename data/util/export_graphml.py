@@ -240,48 +240,48 @@ def main():
             rows = session.run(QUERY_ARTICLES).data()
             for r in rows:
                 writer.add_node(r["neo_id"], "Article", {
-                    # "openalex_id":      r["openalex_id"],
-                    # "doi":              r["doi"],
+                    "openalex_id":      r["openalex_id"],
+                    "doi":              r["doi"],
                     "title":            r["title"],
-                    # "publication_year": r["publication_year"],
+                    "publication_year": r["publication_year"],
                     "cited_by_count":   r["cited_by_count"],
                 })
             print(f"  {len(rows):,} articles")
 
-            # print("Fetching Author nodes ...", flush=True)
-            # rows = session.run(QUERY_AUTHORS).data()
-            # for r in rows:
-            #     writer.add_node(r["neo_id"], "Author", {
-            #         "openalex_id": r["openalex_id"],
-            #     })
-            # print(f"  {len(rows):,} authors")
+            print("Fetching Author nodes ...", flush=True)
+            rows = session.run(QUERY_AUTHORS).data()
+            for r in rows:
+                writer.add_node(r["neo_id"], "Author", {
+                    "openalex_id": r["openalex_id"],
+                })
+            print(f"  {len(rows):,} authors")
 
             print("Fetching Institution nodes ...", flush=True)
             rows = session.run(QUERY_INSTITUTIONS).data()
             for r in rows:
                 writer.add_node(r["neo_id"], "Institution", {
-                    # "openalex_id":  r["openalex_id"],
+                    "openalex_id":  r["openalex_id"],
                     "display_name": r["display_name"],
                     "country_code": r["country_code"],
-                    # "ror":          r["ror"],
+                    "ror":          r["ror"],
                 })
             print(f"  {len(rows):,} institutions")
 
-            # print("Fetching Subfield nodes ...", flush=True)
-            # rows = session.run(QUERY_SUBFIELDS).data()
-            # for r in rows:
-            #     writer.add_node(r["neo_id"], "Subfield", {
-            #         # "openalex_id":  r["openalex_id"],
-            #         "display_name": r["display_name"],
-            #         "field_name":   r["field_name"],
-            #     })
-            # print(f"  {len(rows):,} subfields")
+            print("Fetching Subfield nodes ...", flush=True)
+            rows = session.run(QUERY_SUBFIELDS).data()
+            for r in rows:
+                writer.add_node(r["neo_id"], "Subfield", {
+                    "openalex_id":  r["openalex_id"],
+                    "display_name": r["display_name"],
+                    "field_name":   r["field_name"],
+                })
+            print(f"  {len(rows):,} subfields")
 
             print("Fetching Venue nodes ...", flush=True)
             rows = session.run(QUERY_VENUES).data()
             for r in rows:
                 writer.add_node(r["neo_id"], "Venue", {
-                    # "openalex_id":  r["openalex_id"],
+                    "openalex_id":  r["openalex_id"],
                     "display_name": r["display_name"],
                     "type":         r["type"],
                 })
@@ -295,12 +295,12 @@ def main():
                 writer.add_edge(r["rel_id"], r["src"], r["tgt"], "AFFILIATED_WITH")
             print(f"  {len(rows):,} edges")
 
-            # print("Fetching AUTHORED_BY ...", flush=True)
-            # rows = session.run(QUERY_REL_AUTHORED_BY).data()
-            # for r in rows:
-            #     writer.add_edge(r["rel_id"], r["src"], r["tgt"], "AUTHORED_BY",
-            #                     {"author_position": r["author_position"]})
-            # print(f"  {len(rows):,} edges")
+            print("Fetching AUTHORED_BY ...", flush=True)
+            rows = session.run(QUERY_REL_AUTHORED_BY).data()
+            for r in rows:
+                writer.add_edge(r["rel_id"], r["src"], r["tgt"], "AUTHORED_BY")
+                                # , {"author_position": r["author_position"]})
+            print(f"  {len(rows):,} edges")
 
             print("Fetching CITES ...", flush=True)
             rows = session.run(QUERY_REL_CITES).data()
@@ -308,11 +308,11 @@ def main():
                 writer.add_edge(r["rel_id"], r["src"], r["tgt"], "CITES")
             print(f"  {len(rows):,} edges")
 
-            # print("Fetching HAS_SUBFIELD ...", flush=True)
-            # rows = session.run(QUERY_REL_HAS_SUBFIELD).data()
-            # for r in rows:
-            #     writer.add_edge(r["rel_id"], r["src"], r["tgt"], "HAS_SUBFIELD")
-            # print(f"  {len(rows):,} edges")
+            print("Fetching HAS_SUBFIELD ...", flush=True)
+            rows = session.run(QUERY_REL_HAS_SUBFIELD).data()
+            for r in rows:
+                writer.add_edge(r["rel_id"], r["src"], r["tgt"], "HAS_SUBFIELD")
+            print(f"  {len(rows):,} edges")
 
             print("Fetching PUBLISHED_IN ...", flush=True)
             rows = session.run(QUERY_REL_PUBLISHED_IN).data()

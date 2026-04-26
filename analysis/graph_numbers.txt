@@ -1,0 +1,41 @@
+Total percorrido:
+    Articles: 8953263
+    Citations: 47991643
+
+Desses, tínhamos baixado:
+    Articles: 168056
+    Citations: 22123799
+
+Depois do load (só unicamp + caminhos até artigos selecionados):
+    {
+        Author:100649, 
+        Institution:9480, 
+        Venue:3933, 
+        Subfield:204, 
+        Article:50199
+    }
+    {
+        PUBLISHED_IN:36969, 
+        HAS_SUBFIELD:111701, 
+        AFFILIATED_WITH:95777, 
+        CITES:386386, 
+        AUTHORED_BY:171968, 
+        WORKS_AT:129880
+    }
+
+Final (depois do pruning):
+    {
+        Author:98479, 
+        Institution:9289, 
+        Venue:3845, 
+        Subfield:202, 
+        Article:49196
+    }
+    {
+        PUBLISHED_IN:36152, 
+        HAS_SUBFIELD:109179, 
+        AFFILIATED_WITH:94010, 
+        CITES:386113, 
+        AUTHORED_BY:168896, 
+        WORKS_AT:127477
+    }
