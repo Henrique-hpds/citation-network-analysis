@@ -119,9 +119,10 @@ def build_citation_index(
 
                 refs = _ref_ids(rec)
 
-                # Forward index and file path for this article
+                # Forward index, citation count, and file path for this article
                 entry = index[src]
                 entry["index"] = refs
+                entry["cited_by_count"] = rec.get("cited_by_count", 0)
                 entry["path"] = str(path)
 
                 # Reverse index: register src as a citer of each ref

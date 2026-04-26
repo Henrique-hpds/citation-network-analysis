@@ -154,6 +154,7 @@ def plot_degree_distribution(degrees, num_nodes):
     # --- linear ---
     ax = axes[0]
     ax.bar(degrees, num_nodes, color=PALETTE["blue"], edgecolor="white", linewidth=0.4)
+    ax.set_xlim(-1, 100)
     _style_ax(ax, "Escala linear", "Grau (k)", "Número de vértices")
 
     # --- log-log ---

@@ -13,7 +13,7 @@ fi
 
 openalex download \
   --api-key ${OPENALEX_API_KEY} \
-  --output ./data/responses_1/ \
+  --output ./data/responses/ \
   --nested \
   --resume \
   --filter "primary_topic.field.id:17,cited_by_count:>10,type:article" #,authorships.institutions.id:i181391015"

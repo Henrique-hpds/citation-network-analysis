@@ -222,3 +222,6 @@ data/data/**
 especif.md
 data/flat**
 data/responses**
+data/**.json
+data/output/**
+!data/output/*.graphml
