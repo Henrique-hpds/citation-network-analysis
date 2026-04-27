@@ -35,7 +35,7 @@ Final (depois do pruning):
         PUBLISHED_IN:36152, 
         HAS_SUBFIELD:109179, 
         AFFILIATED_WITH:94010, 
-        CITES:386113, 
+        CITES:385529, 
         AUTHORED_BY:168896, 
         WORKS_AT:127477
     }
