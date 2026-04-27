@@ -273,7 +273,7 @@ def plot_component_sizes(components):
     for s in components:
         size_count[s] += 1
 
-    giant  = components[0]
+    largest  = components[0]
     sizes  = np.array(sorted(size_count.keys()), dtype=float)
     counts = np.array([size_count[int(s)] for s in sizes], dtype=float)
 
@@ -281,7 +281,8 @@ def plot_component_sizes(components):
     ylabel = "Frequência (Número de Componentes)"
     title_base = "Distribuição do Tamanho das Componentes Fracamente Conexas"
 
-    mask_small = sizes < giant
+    is_giant_outlier = largest > components[1] * 10
+    mask_small = sizes < largest if is_giant_outlier else np.full_like(sizes, True, dtype=bool)
     s_small = sizes[mask_small]
     c_small = counts[mask_small]
     min_gap = float(np.diff(s_small).min()) if len(s_small) > 1 else 1.0
@@ -296,7 +297,11 @@ def plot_component_sizes(components):
         ax.set_xticklabels([str(int(s)) for s in s_small],
                            rotation=45, ha="right", fontsize=8)
         ax.set_xlim(s_small.min() - min_gap, s_small.max() + min_gap)
-    _style_ax(ax, f"{title_base}\n(excluindo componente gigante k={giant:,})", xlabel, ylabel)
+    if is_giant_outlier:
+        title_linear = f"{title_base}\n(excluindo componente gigante k={largest:,})"
+    else:
+        title_linear = title_base
+    _style_ax(ax, title_linear, xlabel, ylabel)
     _savefig(fig, os.path.join(FIGURES_DIR, "wcc_size_distribution_linear.png"))
 
     # Figura 2 — log-y (sem o gigante)
@@ -309,7 +314,11 @@ def plot_component_sizes(components):
                            rotation=45, ha="right", fontsize=8)
         ax.set_xlim(s_small.min() - min_gap, s_small.max() + min_gap)
     ax.set_yscale("log")
-    _style_ax(ax, f"{title_base} (Escala Log)\n(excluindo componente gigante k={giant:,})",
+    if is_giant_outlier:
+        title_logy = f"{title_base} (Escala Log)\n(excluindo componente gigante k={largest:,})"
+    else:
+        title_logy = f"{title_base} (Escala Log)"
+    _style_ax(ax, title_logy,
               xlabel, f"{ylabel} — Escala Log", logy=True)
     _savefig(fig, os.path.join(FIGURES_DIR, "wcc_size_distribution_logy.png"))
 
@@ -318,11 +327,12 @@ def plot_component_sizes(components):
     mask_pos = counts > 0
     ax.scatter(sizes[mask_pos], counts[mask_pos],
                color=PALETTE["green"], s=40, alpha=0.85, zorder=3)
-    ax.scatter([giant], [size_count[giant]],
-               color=PALETTE["red"], s=70, zorder=4, label=f"Gigante (k={giant:,})")
+    if is_giant_outlier:
+        ax.scatter([largest], [size_count[largest]],
+                   color=PALETTE["red"], s=70, zorder=4, label=f"Gigante (k={largest:,})")
+        ax.legend(fontsize=9)
     ax.set_xscale("log")
     ax.set_yscale("log")
-    ax.legend(fontsize=9)
     ax.yaxis.set_major_formatter(ticker.ScalarFormatter())
     _style_ax(ax, f"{title_base} (Log-Log)", xlabel, ylabel, logy=True)
     _savefig(fig, os.path.join(FIGURES_DIR, "wcc_size_distribution_loglog.png"))
@@ -339,15 +349,16 @@ def plot_scc_sizes(components):
     for s in components:
         size_count[s] += 1
 
-    giant  = components[0]
-    sizes  = np.array(sorted(size_count.keys()), dtype=float)
+    giant = components[0]
+    sizes = np.array(sorted(size_count.keys()), dtype=float)
     counts = np.array([size_count[int(s)] for s in sizes], dtype=float)
 
     xlabel = "Tamanho da Componente (Número de Vértices)"
     ylabel = "Frequência (Número de Componentes)"
     title_base = "Distribuição do Tamanho das Componentes Fortemente Conexas"
 
-    mask_small = sizes < giant
+    is_giant_outlier = giant > components[1] * 10 if len(components) > 1 else False
+    mask_small = sizes < giant if is_giant_outlier else np.full_like(sizes, True, dtype=bool)
     s_small = sizes[mask_small]
     c_small = counts[mask_small]
     min_gap = float(np.diff(s_small).min()) if len(s_small) > 1 else 1.0
@@ -362,7 +373,11 @@ def plot_scc_sizes(components):
         ax.set_xticklabels([str(int(s)) for s in s_small],
                            rotation=45, ha="right", fontsize=8)
         ax.set_xlim(s_small.min() - min_gap, s_small.max() + min_gap)
-    _style_ax(ax, f"{title_base}\n(excluindo componente gigante k={giant:,})", xlabel, ylabel)
+    if is_giant_outlier:
+        title_linear = f"{title_base}\n(excluindo componente gigante k={giant:,})"
+    else:
+        title_linear = title_base
+    _style_ax(ax, title_linear, xlabel, ylabel)
     _savefig(fig, os.path.join(FIGURES_DIR, "scc_size_distribution_linear.png"))
 
     # Figura 2 — log-y (sem o gigante)
@@ -375,7 +390,11 @@ def plot_scc_sizes(components):
                            rotation=45, ha="right", fontsize=8)
         ax.set_xlim(s_small.min() - min_gap, s_small.max() + min_gap)
     ax.set_yscale("log")
-    _style_ax(ax, f"{title_base} (Escala Log)\n(excluindo componente gigante k={giant:,})",
+    if is_giant_outlier:
+        title_logy = f"{title_base} (Escala Log)\n(excluindo componente gigante k={giant:,})"
+    else:
+        title_logy = f"{title_base} (Escala Log)"
+    _style_ax(ax, title_logy,
               xlabel, f"{ylabel} — Escala Log", logy=True)
     _savefig(fig, os.path.join(FIGURES_DIR, "scc_size_distribution_logy.png"))
 
@@ -384,11 +403,12 @@ def plot_scc_sizes(components):
     mask_pos = counts > 0
     ax.scatter(sizes[mask_pos], counts[mask_pos],
                color=PALETTE["blue"], s=40, alpha=0.85, zorder=3)
-    ax.scatter([giant], [size_count[giant]],
-               color=PALETTE["red"], s=70, zorder=4, label=f"Gigante (k={giant:,})")
+    if is_giant_outlier:
+        ax.scatter([giant], [size_count[giant]],
+                   color=PALETTE["red"], s=70, zorder=4, label=f"Gigante (k={giant:,})")
+        ax.legend(fontsize=9)
     ax.set_xscale("log")
     ax.set_yscale("log")
-    ax.legend(fontsize=9)
     ax.yaxis.set_major_formatter(ticker.ScalarFormatter())
     _style_ax(ax, f"{title_base} (Log-Log)", xlabel, ylabel, logy=True)
     _savefig(fig, os.path.join(FIGURES_DIR, "scc_size_distribution_loglog.png"))
