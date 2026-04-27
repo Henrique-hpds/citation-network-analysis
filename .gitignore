@@ -225,3 +225,5 @@ data/responses**
 data/**.json
 data/output/**
 !data/output/*.graphml
+
+bd.md
