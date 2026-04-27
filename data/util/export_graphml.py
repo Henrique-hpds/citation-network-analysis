@@ -248,13 +248,13 @@ def main():
                 })
             print(f"  {len(rows):,} articles")
 
-            print("Fetching Author nodes ...", flush=True)
-            rows = session.run(QUERY_AUTHORS).data()
-            for r in rows:
-                writer.add_node(r["neo_id"], "Author", {
-                    "openalex_id": r["openalex_id"],
-                })
-            print(f"  {len(rows):,} authors")
+            # print("Fetching Author nodes ...", flush=True)
+            # rows = session.run(QUERY_AUTHORS).data()
+            # for r in rows:
+            #     writer.add_node(r["neo_id"], "Author", {
+            #         "openalex_id": r["openalex_id"],
+            #     })
+            # print(f"  {len(rows):,} authors")
 
             print("Fetching Institution nodes ...", flush=True)
             rows = session.run(QUERY_INSTITUTIONS).data()
@@ -295,12 +295,12 @@ def main():
                 writer.add_edge(r["rel_id"], r["src"], r["tgt"], "AFFILIATED_WITH")
             print(f"  {len(rows):,} edges")
 
-            print("Fetching AUTHORED_BY ...", flush=True)
-            rows = session.run(QUERY_REL_AUTHORED_BY).data()
-            for r in rows:
-                writer.add_edge(r["rel_id"], r["src"], r["tgt"], "AUTHORED_BY")
-                                # , {"author_position": r["author_position"]})
-            print(f"  {len(rows):,} edges")
+            # print("Fetching AUTHORED_BY ...", flush=True)
+            # rows = session.run(QUERY_REL_AUTHORED_BY).data()
+            # for r in rows:
+            #     writer.add_edge(r["rel_id"], r["src"], r["tgt"], "AUTHORED_BY")
+            #                     # , {"author_position": r["author_position"]})
+            # print(f"  {len(rows):,} edges")
 
             print("Fetching CITES ...", flush=True)
             rows = session.run(QUERY_REL_CITES).data()
