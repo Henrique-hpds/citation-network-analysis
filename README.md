@@ -6,6 +6,17 @@ O objetivo é extrair e analisar padrões cienciométricos em redes de citaçõe
 
 ---
 
+## Como importar o grafo
+
+Se importado com apoc, é preferido que seja utilizado o parâmetro "useTypes". Por exemplo:
+
+```bash
+# Neo4J APOC call
+CALL apoc.import.graphml('./network.graphml', {useTypes:true})
+```
+
+---
+
 ## Descrição
 
 A partir de um grande conjunto de artigos científicos obtidos via [OpenAlex](https://openalex.org/), o projeto constrói um grafo direcionado de citações e aplica algoritmos de análise estrutural para estudar relações de proximidade, influência e organização temática na literatura científica de Computação.
