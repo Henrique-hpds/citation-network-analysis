@@ -1,0 +1,58 @@
+======================================================================
+DISTÂNCIAS DE DIFUSÃO DE CONHECIMENTO: ALTO IMPACTO → IC/UNICAMP
+======================================================================
+  Modelo: aresta A→B = 'A cita B'; conhecimento flui de B para A.
+  Distância de difusão de H até P = menor nº de hops no caminho
+  P→...→H no dígrafo original (BFS no grafo transposto a partir de H).
+
+  Limiar de alto impacto : ≥ 100,000 citações
+  Artigos de alto impacto: 3
+  Artigos da Unicamp      : 1,885
+    — alcançados pelo BFS : 518
+    — não alcançados      : 1,367 (sem caminho de difusão)
+  Tamanho do maior WCC    : 87,901
+
+Estatísticas das distâncias (artigos do IC no maior WCC):
+  Mínima  : 1
+  Máxima  : 10
+  Média   : 3.19
+  Mediana : 3.0
+  Desvio padrão: 1.52
+
+Distribuição das distâncias:
+   Distância   # artigos IC   % artigos IC
+  ----------  -------------  -------------
+           1             42           8.1%
+           2            156          30.1%
+           3            135          26.1%
+           4             93          18.0%
+           5             64          12.4%
+           6              6           1.2%
+           7             13           2.5%
+           8              5           1.0%
+           9              3           0.6%
+          10              1           0.2%
+
+Artigos do IC mais próximos de um artigo de alto impacto (top-10):
+  dist=1  [2019]    53 cit.  Bug report severity level prediction in open source software
+  dist=1  [2018]    12 cit.  DOCToR: The Role of Deep Features in Content-Based Mammograp
+  dist=1  [2018]    23 cit.  A Soft Computing Framework for Image Classification Based on
+  dist=1  [2018]    20 cit.  Connecting the dots: Toward accountable machine-learning pri
+  dist=1  [2021]    38 cit.  Machine learning techniques applied to solar flares forecast
+  dist=1  [2024]    15 cit.  Computer Vision Model Compression Techniques for Embedded Sy
+  dist=1  [2016]    12 cit.  On the Reconstruction of Text Phylogeny Trees: Evaluation an
+  dist=1  [2021]    19 cit.  Transformation-Aware Embeddings for Image Provenance
+  dist=1  [2022]   100 cit.  Detect and Locate: Exposing Face Manipulation by Semantic- a
+  dist=1  [2020]    42 cit.  Leveraging Shape, Reflectance and Albedo From Shading for Fa
+
+Artigos do IC mais distantes de um artigo de alto impacto (top-10):
+  dist=10  [2019]    31 cit.  A fog-enabled smart home solution for decision-making using 
+  dist=9  [2017]    15 cit.  Ensemble of metamodels: extensions of the least squares appr
+  dist=9  [2024]    15 cit.  Relations between supply chain performance and circular econ
+  dist=9  [2018]    29 cit.  A Low-Cost Smart Home Automation to Enhance Decision-Making 
+  dist=8  [2019]    12 cit.  A Distance and Position-based Caching Discovery Protocol for
+  dist=8  [2015]    12 cit.  Indoor patient monitoring through Wi-Fi and mobile computing
+  dist=8  [2019]    22 cit.  Interpath Contention in MultiPath TCP Disjoint Paths
+  dist=8  [2015]    43 cit.  Ensemble of metamodels: the augmented least squares approach
+  dist=8  [2020]    12 cit.  Smart contracts applied to a functional architecture for sto
+  dist=7  [2020]    58 cit.  LadderLeak: Breaking ECDSA with Less than One Bit of Nonce L
