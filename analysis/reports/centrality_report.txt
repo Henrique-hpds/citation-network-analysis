@@ -1,0 +1,71 @@
+================================================================================
+ANÁLISE DE CENTRALIDADE: PAGE RANK E IN-DEGREE
+================================================================================
+
+Total de nós no grafo: 87,901
+Artigos da Unicamp: 1,840
+
+Top 20 artigos globalmente por PageRank:
+  Rank      PageRank    Citações     Ano  Título
+  ----  ------------  ----------  ------  ------------------------------------------------------------
+     1      0.012028     218,154    2016  Deep Residual Learning for Image Recognition
+     2      0.007794      75,671    2017  ImageNet classification with deep convolutional ne
+     3      0.006656      11,763    1989  Backpropagation Applied to Handwritten Zip Code Re
+     4      0.006165      57,352    1998  Gradient-based learning applied to document recogn
+     5      0.005869      60,867    2009  ImageNet: A large-scale hierarchical image databas
+     6      0.005611      75,502    2014  Very Deep Convolutional Networks for Large-Scale I
+     7      0.005058      46,504    2015  Going deeper with convolutions
+     8      0.004620      16,144    1999  Object recognition from local scale-invariant feat
+     9      0.004516      31,459    2014  Rich Feature Hierarchies for Accurate Object Detec
+    10      0.004231      39,823    2015  ImageNet Large Scale Visual Recognition Challenge
+    11      0.004007         844    1989  Generalization and network design strategies
+    12      0.003867      19,238    2009  The Pascal Visual Object Classes (VOC) Challenge
+    13      0.003796      31,727    2005  Histograms of Oriented Gradients for Human Detecti
+    14      0.003667      16,303    2006  A Fast Learning Algorithm for Deep Belief Nets
+    15      0.003658       2,637    1989  Phoneme recognition using time-delay neural networ
+    16      0.003530      30,286    1986  Learning representations by back-propagating error
+    17      0.003485       1,555    1989  What Size Net Gives Valid Generalization?
+    18      0.003121       2,313    1987  Low-dimensional procedure for the characterization
+    19      0.003057       8,344    1994  Learning long-term dependencies with gradient desc
+    20      0.002847      20,724    2006  Reducing the Dimensionality of Data with Neural Ne
+
+Top 20 artigos da Unicamp por PageRank:
+  Rank      PageRank    Citações     Ano  Título
+  ----  ------------  ----------  ------  ------------------------------------------------------------
+     1      0.001349       5,342    1996  A new, fast, and efficient image codec based on se
+     2      0.000672       4,829    2014  Software-Defined Networking: A Comprehensive Surve
+     3      0.000240       1,515    2002  Uncertain rule-based fuzzy logic systems: introduc
+     4      0.000202         616    1996  An image multiresolution representation for lossle
+     5      0.000173       1,437    2013  V-REP: A versatile and scalable robot simulation f
+     6      0.000156         789    2002  Speech enhancement based on a priori signal to noi
+     7      0.000115         241    1978  A Minimax Theorem for Directed Graphs
+     8      0.000115         436    2009  LIPSIN
+     9      0.000104         486    1998  User-Steered Image Segmentation Paradigms: Live Wi
+    10      0.000103         506    1990  A formulae-as-type notion of control
+    11      0.000092         377    1996  Reliable online human signature verification syste
+    12      0.000082       1,410    2012  Toward Open Set Recognition
+    13      0.000081         821    2003  Ten years of genetic fuzzy systems: current framew
+    14      0.000079         399    2017  Mobility-Aware Application Scheduling in Fog Compu
+    15      0.000075         139    1999  Estimating crowd density with Minkowski fractal di
+    16      0.000073         440    2011  Contributions to the study of SMS spam filtering
+    17      0.000069         189    2002  A multiscale method for the reassembly of two-dime
+    18      0.000066         520    2011  Theory and Practice of Bloom Filters for Distribut
+    19      0.000065         422    2011  A Survey of Large Scale Data Management Approaches
+    20      0.000062         136    2008  TripleBeat
+
+Correlação entre in-degree (local) e cited_by_count (global):
+  Pearson r = 0.5711
+
+Estatísticas de PageRank:
+  Mínimo    : 2.861767e-06
+  Máximo    : 1.202773e-02
+  Média     : 1.137643e-05
+  Mediana   : 3.392987e-06
+  Desvio-padrão: 9.965870e-05
+
+Estatísticas de in-degree:
+  Mínimo    : 0
+  Máximo    : 32590
+  Média     : 11.78
+  Mediana   : 2.0
+  Desvio-padrão: 144.61
