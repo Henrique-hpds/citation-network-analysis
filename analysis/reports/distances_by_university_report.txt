@@ -1,0 +1,46 @@
+Model: A->B means A cites B; diffusion distance uses shortest path from source set H to P
+       in the original citation digraph (multi-source BFS).
+
+Input IDs in file                        : 7,707
+IDs found in graph and grouped           : 7,648
+Giant weakly-connected component size    : 49,012
+High-impact source threshold             : >= 500 citations
+High-impact sources in giant WCC         : 3,837
+Exclude target IDs from source set       : True
+
+Continent | University                                | Articles in giant | Reached | Reach% | Mean  | Median | Min | Max
+--------------------------------------------------------------------------------------------------------------
+Asia      | Kyoto University |               54 |      13 |  24.1% |  1.69 |    1.0 |   1 |   3
+Asia      | The University of Tokyo |              139 |      39 |  28.1% |  1.79 |    2.0 |   1 |   4
+Asia      | Peking University |              280 |     101 |  36.1% |  1.84 |    1.0 |   1 |   8
+Asia      | National University of Singapore |              376 |     162 |  43.1% |  1.90 |    2.0 |   1 |   6
+Asia      | Nanjing University |              171 |      47 |  27.5% |  1.91 |    2.0 |   1 |   5
+Asia      | Wuhan University |              163 |      22 |  13.5% |  2.00 |    1.5 |   1 |   5
+Asia      | Tsinghua University |              571 |     229 |  40.1% |  2.10 |    2.0 |   1 |   9
+Asia      | Vellore Institute of Technology University |              111 |       3 |   2.7% |  2.67 |    2.0 |   2 |   4
+Europe    | Humboldt-Universität zu Berlin |               33 |       8 |  24.2% |  1.50 |    1.0 |   1 |   4
+Europe    | University of Oxford |              260 |     128 |  49.2% |  1.76 |    1.0 |   1 |   6
+Europe    | Technical University of Munich |              134 |      44 |  32.8% |  2.07 |    1.5 |   1 |   7
+Europe    | Institut Polytechnique de Paris |               35 |       6 |  17.1% |  2.17 |    2.0 |   1 |   5
+Europe    | KTH Royal Institute of Technology |               96 |      41 |  42.7% |  2.27 |    2.0 |   1 |   8
+Europe    | Technical University of Darmstadt |              106 |      26 |  24.5% |  2.65 |    2.0 |   1 |   7
+Europe    | King's College London |               76 |      25 |  32.9% |  2.72 |    2.0 |   1 |   6
+Europe    | Eindhoven University of Technology |              118 |      22 |  18.6% |  2.77 |    3.0 |   1 |   7
+North Am... | Massachusetts Institute of Technology |              452 |     252 |  55.8% |  1.87 |    1.0 |   1 |   8
+North Am... | Stanford University |              555 |     313 |  56.4% |  1.94 |    1.0 |   1 |   9
+North Am... | Carnegie Mellon University |              599 |     325 |  54.3% |  1.99 |    1.0 |   1 |   9
+North Am... | University of California, Berkeley |              551 |     367 |  66.6% |  2.01 |    1.0 |   1 |   9
+North Am... | Yale University |              117 |      63 |  53.8% |  2.02 |    1.0 |   1 |   9
+North Am... | Harvard University Press |               71 |      34 |  47.9% |  2.15 |    2.0 |   1 |   6
+North Am... | University of Pennsylvania |              173 |      87 |  50.3% |  2.55 |    2.0 |   1 |  11
+South Am... | Universidade Estadual Paulista (Unesp) |              130 |      25 |  19.2% |  2.04 |    2.0 |   1 |   5
+South Am... | Universidade Federal do Rio de Janeiro |              157 |      43 |  27.4% |  2.51 |    2.0 |   1 |   6
+South Am... | Universidade Federal de Minas Gerais |              211 |      56 |  26.5% |  2.71 |    3.0 |   1 |   8
+South Am... | Universidade de São Paulo |              386 |      83 |  21.5% |  2.90 |    3.0 |   1 |   9
+South Am... | Universidade Estadual de Campinas (UNICAMP) |            1,839 |     592 |  32.2% |  3.01 |    3.0 |   1 |  10
+South Am... | Universidade Federal de São Carlos |              115 |      46 |  40.0% |  3.22 |    2.0 |   1 |   9
+
+Notes:
+- One paper may contribute to multiple universities if it has multiple affiliations.
+- Distances are computed only for nodes inside the giant WCC.
+- Reach% is over that university's target-paper subset inside the giant WCC.

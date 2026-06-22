@@ -8,14 +8,14 @@ Modelo de difusão de conhecimento:
 
       H  ←cita—  X₁  ←cita—  X₂  ←cita—  P
 
-  No grafo original, isso equivale ao caminho dirigido P → X₂ → X₁ → H.
-  Portanto, a distância de difusão de H até P = comprimento do caminho mais
-  curto de P a H no dígrafo original = BFS no grafo TRANSPOSTO a partir de H.
+  No grafo original, isso equivale ao caminho dirigido H → X₂ → X₁ → P.
+  Portanto, a distância seguida = comprimento do caminho mais
+  curto de H a P no dígrafo original = BFS no grafo ORIGINAL a partir de H.
 
 Estratégia:
-  - Grafo transposto do dígrafo CITES, restrito ao maior WCC não-dirigido.
-  - BFS multi-source a partir de todos os artigos de alto impacto no transposto
-    → distância de difusão de cada nó ao artigo de alto impacto mais próximo.
+  - Grafo original do dígrafo CITES, restrito ao maior WCC não-dirigido.
+  - BFS multi-source a partir de todos os artigos de alto impacto no original
+    → distância seguida de cada nó ao artigo de alto impacto mais próximo.
   - Reporta a distribuição dessas distâncias para os artigos do IC.
 
 Artigos de "alto impacto" são definidos pelo flag --min-citations
@@ -38,6 +38,7 @@ Saída:
 """
 
 import argparse
+import json
 import os
 from collections import Counter, deque, defaultdict
 import math
@@ -95,7 +96,7 @@ def _run(cypher: str, params: dict = None):
 # Data loading
 # ---------------------------------------------------------------------------
 
-def load_data(min_citations: int):
+def load_data(min_citations: int = None, article_ids: set[str] = None):
     print("Carregando arestas CITES...")
     edges = _run("""
         MATCH (a:Article)-[:CITES]->(b:Article)
@@ -129,15 +130,21 @@ def load_data(min_citations: int):
         for r in articles
     }
 
-    # High-impact: high citation count AND not Unicamp (to avoid trivial distance=0)
-    high_impact_ids = {
-        nid for nid, m in meta.items()
-        if m["cited_by_count"] >= min_citations and nid not in unicamp_ids
-    }
-
-    print(f"  Artigos totais      : {len(meta):,}")
-    print(f"  Artigos da Unicamp  : {len(unicamp_ids):,}")
-    print(f"  Alto impacto (≥{min_citations:,} citações): {len(high_impact_ids):,}")
+    # Determine high-impact IDs
+    if article_ids is not None:
+        # Use provided article IDs, but exclude Unicamp to avoid trivial distance=0
+        high_impact_ids = {nid for nid in article_ids if nid not in unicamp_ids}
+        print(f"  Usando lista personalizada de {len(article_ids):,} artigos")
+        print(f"  Após remover artigos da Unicamp: {len(high_impact_ids):,} artigos de alto impacto")
+    else:
+        # High-impact: high citation count AND not Unicamp (to avoid trivial distance=0)
+        high_impact_ids = {
+            nid for nid, m in meta.items()
+            if m["cited_by_count"] >= min_citations and nid not in unicamp_ids
+        }
+        print(f"  Artigos totais      : {len(meta):,}")
+        print(f"  Artigos da Unicamp  : {len(unicamp_ids):,}")
+        print(f"  Alto impacto (≥{min_citations:,} citações): {len(high_impact_ids):,}")
 
     G = nx.DiGraph()
     G.add_nodes_from(meta.keys())
@@ -146,20 +153,16 @@ def load_data(min_citations: int):
     return G, meta, unicamp_ids, high_impact_ids
 
 
-# ---------------------------------------------------------------------------
-# Multi-source BFS no grafo transposto
-# ---------------------------------------------------------------------------
-
-def multisource_bfs_transposed(G: nx.DiGraph, sources: set[str]) -> dict[str, int]:
+def multisource_bfs_original(G: nx.DiGraph, sources: set[str]) -> dict[str, int]:
     """
-    BFS no grafo TRANSPOSTO a partir dos nós em sources.
+    BFS no grafo ORIGINAL a partir dos nós em sources.
 
-    No transposto, uma aresta u → v do original vira v → u.
-    BFS no transposto a partir de H alcança todos os nós P tais que
-    existe caminho dirigido de P a H no grafo original — ou seja,
-    todos os P que "podem difundir conhecimento" até H.
+    No original, uma aresta u → v significa "u cita v".
+    BFS no original a partir de H alcança todos os nós P tais que
+    existe caminho dirigido de H a P no grafo original — ou seja,
+    todos os P que são citados (direta ou indiretamente) por H.
 
-    Retorna dist[P] = distância de difusão do H mais próximo até P.
+    Retorna dist[P] = comprimento do caminho mais curto de H a P no grafo original.
     """
     dist: dict[str, int] = {}
     queue: deque = deque()
@@ -171,8 +174,8 @@ def multisource_bfs_transposed(G: nx.DiGraph, sources: set[str]) -> dict[str, in
 
     while queue:
         u = queue.popleft()
-        # predecessores no original = sucessores no transposto
-        for v in G.predecessors(u):
+        # sucessores no grafo original
+        for v in G.successors(u):
             if v not in dist:
                 dist[v] = dist[u] + 1
                 queue.append(v)
@@ -340,8 +343,8 @@ def build_report(
     unicamp_ids: set[str],
     high_impact_ids: set[str],
     meta: dict,
-    min_citations: int,
-    giant_size: int,
+    min_citations: int = None,
+    giant_size: int = None,
     fit_results: dict = None,
 ) -> str:
     ic_in_giant = [nid for nid in unicamp_ids if nid in dist_all]
@@ -355,15 +358,21 @@ def build_report(
     lines.append("DISTÂNCIAS DE DIFUSÃO DE CONHECIMENTO: ALTO IMPACTO → IC/UNICAMP")
     lines.append(sep)
     lines.append("  Modelo: aresta A→B = 'A cita B'; conhecimento flui de B para A.")
-    lines.append("  Distância de difusão de H até P = menor nº de hops no caminho")
-    lines.append("  P→...→H no dígrafo original (BFS no grafo transposto a partir de H).")
+    lines.append("  Distância seguida = menor nº de hops no caminho")
+    lines.append("  H→...→P no dígrafo original (BFS no grafo original a partir de H).")
     lines.append("")
-    lines.append(f"  Limiar de alto impacto : ≥ {min_citations:,} citações")
+
+    if min_citations is not None:
+        lines.append(f"  Limiar de alto impacto : ≥ {min_citations:,} citações")
+    else:
+        lines.append(f"  Artigos de alto impacto: {len(high_impact_ids):,} (lista personalizada)")
+
     lines.append(f"  Artigos de alto impacto: {len(high_impact_ids):,}")
     lines.append(f"  Artigos da Unicamp      : {len(unicamp_ids):,}")
     lines.append(f"    — alcançados pelo BFS : {len(ic_in_giant):,}")
     lines.append(f"    — não alcançados      : {unreachable_ic:,} (sem caminho de difusão)")
-    lines.append(f"  Tamanho do maior WCC    : {giant_size:,}")
+    if giant_size is not None:
+        lines.append(f"  Tamanho do maior WCC    : {giant_size:,}")
     lines.append("")
 
     if not ic_dists:
@@ -484,7 +493,7 @@ def _savefig(fig, path):
     print(f"  Salvo: {path}")
 
 
-def plot_distances(dist_all: dict, unicamp_ids: set, min_citations: int):
+def plot_distances(dist_all: dict, unicamp_ids: set, min_citations: int = None):
     ic_dists = [dist_all[n] for n in unicamp_ids if n in dist_all]
     if not ic_dists:
         print("  Nenhum dado para plotar.")
@@ -502,10 +511,13 @@ def plot_distances(dist_all: dict, unicamp_ids: set, min_citations: int):
     ax.axvline(mean_d, color=PALETTE["red"], linewidth=1.5, linestyle="--",
                label=f"Média = {mean_d:.2f}")
     ax.legend(fontsize=10)
+    if min_citations is not None:
+        title = f"Distância dos Artigos do IC ao Artigo de Alto Impacto Mais Próximo\n(limiar: ≥ {min_citations:,} citações)"
+    else:
+        title = "Distância dos Artigos do IC ao Artigo de Alto Impacto Mais Próximo\n(lista personalizada de artigos)"
     _style_ax(
         ax,
-        f"Distância dos Artigos do IC ao Artigo de Alto Impacto Mais Próximo\n"
-        f"(limiar: ≥ {min_citations:,} citações)",
+        title,
         "Distância Mínima (hops)",
         "Número de Artigos do IC",
     )
@@ -520,17 +532,20 @@ def plot_distances(dist_all: dict, unicamp_ids: set, min_citations: int):
     ax.set_yticks(np.arange(0, 1.1, 0.1))
     ax.yaxis.set_major_formatter(ticker.PercentFormatter(xmax=1))
     ax.set_xticks(xs)
+    if min_citations is not None:
+        title = f"CDF — Distância dos Artigos do IC ao Alto Impacto Mais Próximo\n(limiar: ≥ {min_citations:,} citações)"
+    else:
+        title = "CDF — Distância dos Artigos do IC ao Alto Impacto Mais Próximo\n(lista personalizada de artigos)"
     _style_ax(
         ax,
-        f"CDF — Distância dos Artigos do IC ao Alto Impacto Mais Próximo\n"
-        f"(limiar: ≥ {min_citations:,} citações)",
+        title,
         "Distância Mínima (hops)",
         "Fração Acumulada de Artigos do IC",
     )
     _savefig(fig, os.path.join(FIGURES_DIR, "distances_ic_cdf.png"))
 
 
-def plot_all_distances(dist_all: dict, unicamp_ids: set, min_citations: int):
+def plot_all_distances(dist_all: dict, unicamp_ids: set, min_citations: int = None):
     """Plot distribution for all nodes (not just IC) for context."""
     all_dists = list(dist_all.values())
     if not all_dists:
@@ -551,10 +566,13 @@ def plot_all_distances(dist_all: dict, unicamp_ids: set, min_citations: int):
     ax.set_xticks(xs)
     ax.set_yscale("log")
     ax.legend(fontsize=10)
+    if min_citations is not None:
+        title = f"Distribuição de Distâncias ao Alto Impacto Mais Próximo (Escala Log)\n(limiar: ≥ {min_citations:,} citações)"
+    else:
+        title = "Distribuição de Distâncias ao Alto Impacto Mais Próximo (Escala Log)\n(lista personalizada de artigos)"
     _style_ax(
         ax,
-        f"Distribuição de Distâncias ao Alto Impacto Mais Próximo (Escala Log)\n"
-        f"(limiar: ≥ {min_citations:,} citações)",
+        title,
         "Distância Mínima (hops)",
         "Número de Artigos (Escala Log)",
         logy=True,
@@ -611,14 +629,6 @@ def plot_distance_vs_citations(dist_all: dict, unicamp_ids: set, meta: dict):
     fig, ax = plt.subplots(figsize=(9, 5))
     ax.scatter(citations, dists, alpha=0.5, s=10, color=PALETTE["green"])
     ax.set_xscale('log')  # citations vary widely
-    # Add a trend line (linear regression in log-citation space?)
-    if len(citations) > 1:
-        log_cit = np.log10(np.array(citations) + 1)  # add 1 to avoid log(0)
-        z = np.polyfit(log_cit, dists, 1)
-        p = np.poly1d(z)
-        ax.plot(np.log10(np.array(citations)+1), p(log_cit), color=PALETTE["red"], linewidth=2,
-                label=f"Tendência linear em log10(citações+1) (coef={z[0]:.3f})")
-        ax.legend(fontsize=10)
     _style_ax(
         ax,
         "Distância de difusão vs. Número de citações globais\n(Artigos do IC no maior WCC)",
@@ -632,11 +642,12 @@ def plot_distance_vs_citations(dist_all: dict, unicamp_ids: set, meta: dict):
 # Main
 # ---------------------------------------------------------------------------
 
-def analyze_single_threshold(min_citations: int) -> dict:
+def analyze_single_threshold(min_citations: int = None, article_ids: set[str] = None) -> dict:
     """
-    Run the analysis for a single threshold and return metrics and data needed for reporting/plotting.
+    Run the analysis for a single threshold or custom article IDs and return metrics and data needed for reporting/plotting.
     Returns a dict with:
-      - threshold: int
+      - threshold: int or None
+      - article_ids_file: str or None
       - G: DiGraph
       - meta: dict
       - unicamp_ids: set
@@ -650,7 +661,7 @@ def analyze_single_threshold(min_citations: int) -> dict:
       - median_dist: float
       - ic_dists: list (for fitting)
     """
-    G, meta, unicamp_ids, high_impact_ids = load_data(min_citations)
+    G, meta, unicamp_ids, high_impact_ids = load_data(min_citations, article_ids)
 
     # Restringe ao maior WCC (usando o grafo subjacente não-dirigido) para
     # garantir que fontes e destinos estejam na mesma componente conexa.
@@ -662,8 +673,8 @@ def analyze_single_threshold(min_citations: int) -> dict:
     print(f"  Maior WCC: {giant_size:,} nós")
     print(f"  Alto impacto no maior WCC: {len(high_impact_in_giant):,}")
 
-    print("\nExecutando BFS multi-source no grafo transposto (difusão de conhecimento)...")
-    dist_all = multisource_bfs_transposed(G_giant, high_impact_in_giant)
+    print("\nExecutando BFS multi-source no grafo original (seguindo citações)...")
+    dist_all = multisource_bfs_original(G_giant, high_impact_in_giant)
     reachable_ic = sum(1 for n in unicamp_ids if n in dist_all)
     ic_total = len([n for n in unicamp_ids if n in G_giant])  # IC nodes in giant WCC
     print(f"  Nós alcançados pelo BFS: {len(dist_all):,} / {giant_size:,}")
@@ -697,12 +708,61 @@ def main():
         help="Limiar mínimo de citações para definir artigos de alto impacto (padrão: 500)"
     )
     parser.add_argument(
+        "--article-ids-file", type=str,
+        help="Caminho para arquivo JSON contendo IDs OpenAlex a serem usados como artigos de alto impacto (sobrescreve --min-citations)"
+    )
+    parser.add_argument(
         "--thresholds", nargs="+", type=int,
         help="Lista de limiares para análise comparativa (sobrescreve --min-citations se fornecido)"
     )
     args = parser.parse_args()
 
-    if args.thresholds:
+    # Handle mutually exclusive arguments: article-ids-file overrides min-citations and thresholds
+    if args.article_ids_file:
+        # Load article IDs from JSON file
+        print(f"Carregando IDs de artigos do arquivo: {args.article_ids_file}")
+        try:
+            with open(args.article_ids_file, 'r') as f:
+                article_ids_list = json.load(f)
+            # Ensure it's a list of strings
+            if not isinstance(article_ids_list, list):
+                raise ValueError("O arquivo JSON deve conter uma lista de IDs")
+            article_ids = set(str(item) for item in article_ids_list)
+            print(f"Carregados {len(article_ids):,} IDs únicos do arquivo JSON")
+        except Exception as e:
+            print(f"Erro ao carregar arquivo JSON: {e}")
+            return
+
+        # Single analysis with custom article IDs
+        print("\nExecutando análise com lista personalizada de artigos...")
+        res = analyze_single_threshold(article_ids=article_ids)
+
+        # Build report (without statistical fitting by default; we can add if SCIPY available)
+        fit_results = None
+        if SCIPY_AVAILABLE and res["ic_dists"]:
+            print("\nExecutando ajuste de distribuições estatísticas (D1.2)...")
+            fit_results = fit_distributions(res["ic_dists"])
+
+        report_text = build_report(
+            res["dist_all"], res["unicamp_ids"], res["high_impact_ids"], res["meta"],
+            None,  # threshold is not applicable
+            res["giant_size"], fit_results
+        )
+        report_path = os.path.join(REPORTS_DIR, "distances_report.txt")
+        with open(report_path, "w", encoding="utf-8") as f:
+            f.write(report_text)
+        print(f"\nSalvo: {report_path}")
+        print(report_text)
+
+        print("\nGerando figuras...")
+        plot_distances(res["dist_all"], res["unicamp_ids"], None)  # No threshold to display
+        plot_all_distances(res["dist_all"], res["unicamp_ids"], None)
+        plot_distance_vs_year(res["dist_all"], res["unicamp_ids"], res["meta"])
+        plot_distance_vs_citations(res["dist_all"], res["unicamp_ids"], res["meta"])
+
+        print("\nConcluído. Figuras em:", FIGURES_DIR)
+
+    elif args.thresholds:
         # Run comparative analysis for multiple thresholds
         print("Executando análise comparativa para múltiplos limiares...")
         thresholds_results = []

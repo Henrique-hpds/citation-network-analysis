@@ -1,0 +1,45 @@
+Model: A->B means A cites B; diffusion distance uses shortest path from Unicamp articles to P
+       in the original citation digraph (multi-source BFS).
+
+Input IDs in file                        : 7,707
+Unicamp articles (sources)               : 1,885
+IDs found in graph and grouped (targets) : 5,809
+Giant weakly-connected component size    : 49,012
+Exclude target IDs from source set       : True
+
+Continent | University                                | Articles in giant | Reached | Reach% | Mean  | Median | Min | Max
+--------------------------------------------------------------------------------------------------------------
+Asia      | The University of Tokyo |              137 |      64 |  46.7% |  4.14 |    4.0 |   1 |   9
+Asia      | Peking University |              280 |     211 |  75.4% |  4.13 |    4.0 |   1 |  11
+Asia      | Tsinghua University |              570 |     467 |  81.9% |  4.04 |    4.0 |   1 |  10
+Asia      | Nanjing University |              171 |     134 |  78.4% |  3.99 |    4.0 |   1 |  10
+Asia      | National University of Singapore |              375 |     253 |  67.5% |  3.92 |    4.0 |   1 |  10
+Asia      | Kyoto University |               54 |      32 |  59.3% |  3.62 |    3.0 |   1 |  10
+Asia      | Wuhan University |              163 |     143 |  87.7% |  3.28 |    3.0 |   1 |  10
+Asia      | Vellore Institute of Technology University |              111 |      95 |  85.6% |  2.92 |    2.0 |   1 |   8
+Europe    | University of Oxford |              259 |     140 |  54.1% |  4.14 |    4.0 |   1 |  10
+Europe    | Technical University of Munich |              132 |      87 |  65.9% |  3.95 |    4.0 |   1 |   9
+Europe    | Eindhoven University of Technology |              115 |      48 |  41.7% |  3.90 |    4.0 |   1 |   9
+Europe    | KTH Royal Institute of Technology |               92 |      49 |  53.3% |  3.86 |    3.0 |   1 |  10
+Europe    | King's College London |               73 |      38 |  52.1% |  3.63 |    3.0 |   1 |  10
+Europe    | Technical University of Darmstadt |              105 |      66 |  62.9% |  3.18 |    2.0 |   1 |   9
+Europe    | Institut Polytechnique de Paris |               34 |      31 |  91.2% |  2.74 |    2.0 |   1 |   7
+Europe    | Humboldt-Universität zu Berlin |               33 |       6 |  18.2% |  1.83 |    2.0 |   1 |   3
+North Am... | Stanford University |              553 |     186 |  33.6% |  5.17 |    5.0 |   1 |  11
+North Am... | University of California, Berkeley |              549 |     230 |  41.9% |  4.97 |    5.0 |   1 |  10
+North Am... | Yale University |              115 |      45 |  39.1% |  4.76 |    5.0 |   1 |   9
+North Am... | Carnegie Mellon University |              594 |     288 |  48.5% |  4.69 |    5.0 |   1 |  12
+North Am... | Massachusetts Institute of Technology |              450 |     144 |  32.0% |  4.51 |    4.0 |   1 |  10
+North Am... | Harvard University Press |               69 |      40 |  58.0% |  3.77 |    4.0 |   1 |   6
+North Am... | University of Pennsylvania |              161 |      44 |  27.3% |  3.75 |    3.5 |   1 |  10
+South Am... | Universidade Federal de Minas Gerais |              137 |      98 |  71.5% |  3.37 |    3.0 |   1 |  10
+South Am... | Universidade Federal do Rio de Janeiro |              125 |      76 |  60.8% |  3.17 |    3.0 |   1 |  10
+South Am... | Universidade de São Paulo |              273 |     177 |  64.8% |  3.06 |    3.0 |   1 |  10
+South Am... | Universidade Federal de São Carlos |               77 |      56 |  72.7% |  2.89 |    2.0 |   1 |   8
+South Am... | Universidade Estadual Paulista (Unesp) |               73 |      64 |  87.7% |  2.20 |    2.0 |   1 |   8
+
+Notes:
+- One paper may contribute to multiple universities if it has multiple affiliations.
+- Distances are computed only for nodes inside the giant WCC.
+- Unicamp articles are excluded from target groups.
+- Reach% is over that university's target-paper subset inside the giant WCC.
