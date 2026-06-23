@@ -3,9 +3,11 @@ python-dotenv>=1.0,<2
 openalex-official
 aiohttp>=3.9,<4
 ipykernel
-networkx>=3.0
-matplotlib>=3.7
-numpy>=1.24
+networkx>=3.2,<4
+matplotlib>=3.8,<4
+python-louvain>=0.16,<1
+numpy>=1.26,<3
+seaborn>=0.13,<1
 python-louvain>=0.16
 scipy>=1.7
 seaborn>=0.11

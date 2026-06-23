@@ -1,0 +1,42 @@
+community_id,community_name,community_article_count,distinct_theme_count,total_theme_assignments,mean_themes_per_article,dominant_theme,dominant_theme_article_count,dominant_theme_article_fraction
+0,"Visão computacional, sinais e mídia",2097,60,4207,2.0061993323795897,Computer Vision and Pattern Recognition,1917,0.9141630901287554
+1,Visão computacional e IA central,5695,115,11486,2.0168568920105354,Computer Vision and Pattern Recognition,4197,0.7369622475856014
+2,Teoria computacional e biologia molecular,2238,86,6027,2.693029490616622,Computational Theory and Mathematics,2178,0.9731903485254692
+3,Sistemas de informação e aplicações em saúde,15,17,37,2.466666666666667,Information Systems,11,0.7333333333333333
+4,Sistemas de informação e software,1661,45,3996,2.4057796508127636,Information Systems,1064,0.6405779650812763
+5,Inteligência artificial e teoria computacional,4157,103,9081,2.184508058696175,Artificial Intelligence,3409,0.8200625451046428
+6,"Redes, comunicações e sistemas",4785,67,9637,2.014002089864159,Computer Networks and Communications,4324,0.903657262277952
+7,Processamento de sinais e mecânica computacional,1245,59,2923,2.3477911646586347,Signal Processing,1073,0.8618473895582329
+8,"IA aplicada, mídia e ambiente",1936,90,5221,2.696797520661157,Artificial Intelligence,1842,0.9514462809917356
+9,Visão computacional e computação gráfica,1471,82,3082,2.095173351461591,Computer Vision and Pattern Recognition,1202,0.8171312032630863
+10,"IA, visão computacional e biologia molecular",1421,71,3230,2.2730471498944405,Artificial Intelligence,1044,0.7346938775510204
+11,"Visão computacional, IA e sinais",3797,101,7329,1.9302080589939425,Computer Vision and Pattern Recognition,2769,0.7292599420595207
+12,IA e física atômica/molecular,2216,40,4589,2.0708483754512637,Artificial Intelligence,2196,0.9909747292418772
+13,"Redes, sistemas e hardware",1425,54,3349,2.3501754385964913,Computer Networks and Communications,1236,0.8673684210526316
+14,"IA, redes e sistemas de informação",973,47,2226,2.287769784172662,Artificial Intelligence,822,0.8448098663926003
+15,Teoria computacional e análise numérica,2280,68,6007,2.6346491228070175,Computational Theory and Mathematics,1944,0.8526315789473684
+16,"Redes, IA e engenharia elétrica",1804,62,3605,1.9983370288248337,Computer Networks and Communications,1250,0.6929046563192904
+17,"Redes, hardware e sinais",1739,55,4305,2.4755606670500288,Computer Networks and Communications,1081,0.6216216216216216
+18,"Sinais, visão computacional e sistemas",1034,51,2616,2.529980657640232,Signal Processing,945,0.913926499032882
+19,"Redes, IA e materiais",820,30,1429,1.7426829268292683,Computer Networks and Communications,743,0.9060975609756098
+20,Visão computacional e mecânica,11,9,33,3.0,Computer Vision and Pattern Recognition,11,1.0
+21,"IA, sinais e redes",594,52,1488,2.505050505050505,Artificial Intelligence,324,0.5454545454545454
+22,IA e teoria computacional,683,38,1360,1.9912152269399708,Artificial Intelligence,603,0.8828696925329429
+23,"Visão computacional, mídia e biofísica",666,36,1266,1.9009009009009008,Computer Vision and Pattern Recognition,639,0.9594594594594594
+24,"Visão computacional, IA e sinais aplicados",446,61,1022,2.291479820627803,Computer Vision and Pattern Recognition,356,0.7982062780269058
+25,Visão computacional e sinais,649,49,1347,2.0755007704160247,Computer Vision and Pattern Recognition,472,0.7272727272727273
+26,Visão computacional e mídia,119,14,195,1.638655462184874,Computer Vision and Pattern Recognition,119,1.0
+27,"Visão computacional, computação gráfica e controle",350,44,925,2.642857142857143,Computer Vision and Pattern Recognition,245,0.7
+28,"Teoria computacional, redes e matemática discreta",377,30,812,2.1538461538461537,Computational Theory and Mathematics,335,0.8885941644562334
+29,"Redes, física não linear e engenharia biomédica",336,54,843,2.5089285714285716,Computer Networks and Communications,287,0.8541666666666666
+30,Teoria computacional e mecânica computacional,139,27,392,2.820143884892086,Computational Theory and Mathematics,131,0.9424460431654677
+31,"IA, estatística e sinais",221,38,475,2.1493212669683257,Artificial Intelligence,212,0.9592760180995475
+32,"IA, geofísica e imagens radiológicas",85,26,245,2.8823529411764706,Artificial Intelligence,83,0.9764705882352941
+33,Interação humano-computador e aplicações,540,67,1336,2.474074074074074,Human-Computer Interaction,291,0.5388888888888889
+34,"Redes, teoria computacional e gestão de sistemas",136,22,283,2.0808823529411766,Computer Networks and Communications,101,0.7426470588235294
+35,Teoria computacional e análise numérica aplicada,193,29,531,2.7512953367875648,Computational Theory and Mathematics,181,0.9378238341968912
+36,IA e imagens biomédicas,53,22,151,2.849056603773585,Artificial Intelligence,51,0.9622641509433962
+37,"IA, engenharia elétrica e redes",287,29,764,2.662020905923345,Artificial Intelligence,226,0.7874564459930313
+38,"Teoria computacional, análise numérica e geometria",139,30,384,2.762589928057554,Computational Theory and Mathematics,107,0.7697841726618705
+39,"Visão computacional, ciências planetárias e geologia",146,31,367,2.5136986301369864,Computer Vision and Pattern Recognition,123,0.8424657534246576
+40,"IA, sustentabilidade e engenharia elétrica",33,12,83,2.515151515151515,Artificial Intelligence,33,1.0

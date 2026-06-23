@@ -1,0 +1,42 @@
+community_id,community_name,size,unicamp_count,unicamp_fraction,fraction_rank,count_rank,is_top_10_fraction,is_top_10_count,is_interest_community
+0,"Visão computacional, sinais e mídia",2097,27,0.012875536480686695,40,25,False,False,False
+1,Visão computacional e IA central,5695,65,0.01141352063213345,41,11,False,False,False
+2,Teoria computacional e biologia molecular,2238,52,0.02323503127792672,37,13,False,False,False
+3,Sistemas de informação e aplicações em saúde,15,2,0.13333333333333333,2,40,True,False,True
+4,Sistemas de informação e software,1661,107,0.06441902468392535,14,4,False,True,True
+5,Inteligência artificial e teoria computacional,4157,208,0.050036083714216986,22,1,False,True,True
+6,"Redes, comunicações e sistemas",4785,133,0.027795193312434692,35,3,False,True,True
+7,Processamento de sinais e mecânica computacional,1245,40,0.0321285140562249,33,16,False,False,False
+8,"IA aplicada, mídia e ambiente",1936,70,0.03615702479338843,29,9,False,True,True
+9,Visão computacional e computação gráfica,1471,89,0.060503059143439834,15,7,False,True,True
+10,"IA, visão computacional e biologia molecular",1421,24,0.01688951442646024,39,27,False,False,False
+11,"Visão computacional, IA e sinais",3797,135,0.0355543850408217,31,2,False,True,True
+12,IA e física atômica/molecular,2216,92,0.04151624548736462,25,6,False,True,True
+13,"Redes, sistemas e hardware",1425,60,0.042105263157894736,24,12,False,False,False
+14,"IA, redes e sistemas de informação",973,39,0.040082219938335044,27,17,False,False,False
+15,Teoria computacional e análise numérica,2280,44,0.01929824561403509,38,14,False,False,False
+16,"Redes, IA e engenharia elétrica",1804,104,0.057649667405764965,16,5,False,True,True
+17,"Redes, hardware e sinais",1739,80,0.04600345025876941,23,8,False,True,True
+18,"Sinais, visão computacional e sistemas",1034,31,0.029980657640232108,34,21,False,False,False
+19,"Redes, IA e materiais",820,28,0.03414634146341464,32,24,False,False,False
+20,Visão computacional e mecânica,11,1,0.09090909090909091,9,41,True,False,True
+21,"IA, sinais e redes",594,32,0.05387205387205387,19,20,False,False,False
+22,IA e teoria computacional,683,66,0.09663250366032211,8,10,True,True,True
+23,"Visão computacional, mídia e biofísica",666,26,0.03903903903903904,28,26,False,False,False
+24,"Visão computacional, IA e sinais aplicados",446,16,0.03587443946188341,30,31,False,False,False
+25,Visão computacional e sinais,649,33,0.05084745762711865,21,19,False,False,False
+26,Visão computacional e mídia,119,3,0.025210084033613446,36,39,False,False,False
+27,"Visão computacional, computação gráfica e controle",350,18,0.05142857142857143,20,30,False,False,False
+28,"Teoria computacional, redes e matemática discreta",377,30,0.07957559681697612,11,22,False,False,False
+29,"Redes, física não linear e engenharia biomédica",336,22,0.06547619047619048,13,29,False,False,False
+30,Teoria computacional e mecânica computacional,139,14,0.10071942446043165,7,33,True,False,True
+31,"IA, estatística e sinais",221,12,0.05429864253393665,18,34,False,False,False
+32,"IA, geofísica e imagens radiológicas",85,7,0.08235294117647059,10,35,True,False,True
+33,Interação humano-computador e aplicações,540,40,0.07407407407407407,12,15,False,False,False
+34,"Redes, teoria computacional e gestão de sistemas",136,15,0.11029411764705882,6,32,True,False,True
+35,Teoria computacional e análise numérica aplicada,193,22,0.11398963730569948,5,28,True,False,True
+36,IA e imagens biomédicas,53,3,0.05660377358490566,17,38,False,False,False
+37,"IA, engenharia elétrica e redes",287,33,0.11498257839721254,4,18,True,False,True
+38,"Teoria computacional, análise numérica e geometria",139,28,0.2014388489208633,1,23,True,False,True
+39,"Visão computacional, ciências planetárias e geologia",146,6,0.0410958904109589,26,36,False,False,False
+40,"IA, sustentabilidade e engenharia elétrica",33,4,0.12121212121212122,3,37,True,False,True

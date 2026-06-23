@@ -1,0 +1,42 @@
+community_id,community_name,external_in,external_out,communities_that_impact,communities_impacted
+1,Visão computacional e IA central,11691,10282,38,38
+11,"Visão computacional, IA e sinais",11545,7452,35,36
+5,Inteligência artificial e teoria computacional,4859,3611,35,34
+8,"IA aplicada, mídia e ambiente",3461,2086,34,31
+9,Visão computacional e computação gráfica,2854,1901,35,33
+6,"Redes, comunicações e sistemas",2520,5547,28,33
+13,"Redes, sistemas e hardware",2019,1736,31,29
+0,"Visão computacional, sinais e mídia",1719,1348,34,35
+16,"Redes, IA e engenharia elétrica",1482,794,33,32
+14,"IA, redes e sistemas de informação",1441,2300,27,29
+10,"IA, visão computacional e biologia molecular",1206,1146,33,31
+19,"Redes, IA e materiais",1040,1002,22,25
+18,"Sinais, visão computacional e sistemas",908,3113,25,26
+7,Processamento de sinais e mecânica computacional,778,933,30,30
+17,"Redes, hardware e sinais",774,1300,28,31
+15,Teoria computacional e análise numérica,737,719,31,33
+4,Sistemas de informação e software,703,747,25,28
+25,Visão computacional e sinais,561,982,22,27
+21,"IA, sinais e redes",558,519,26,28
+24,"Visão computacional, IA e sinais aplicados",472,1457,25,26
+23,"Visão computacional, mídia e biofísica",425,2031,22,26
+31,"IA, estatística e sinais",382,116,28,17
+2,Teoria computacional e biologia molecular,343,885,26,25
+28,"Teoria computacional, redes e matemática discreta",152,91,23,17
+12,IA e física atômica/molecular,134,267,21,24
+34,"Redes, teoria computacional e gestão de sistemas",134,68,16,13
+37,"IA, engenharia elétrica e redes",129,76,14,16
+26,Visão computacional e mídia,123,489,14,13
+22,IA e teoria computacional,120,106,22,16
+27,"Visão computacional, computação gráfica e controle",120,152,21,21
+39,"Visão computacional, ciências planetárias e geologia",94,175,19,18
+29,"Redes, física não linear e engenharia biomédica",80,65,22,19
+33,Interação humano-computador e aplicações,55,107,20,20
+38,"Teoria computacional, análise numérica e geometria",43,67,17,18
+35,Teoria computacional e análise numérica aplicada,35,24,8,8
+32,"IA, geofísica e imagens radiológicas",21,13,1,3
+36,IA e imagens biomédicas,10,17,4,6
+30,Teoria computacional e mecânica computacional,7,19,5,8
+40,"IA, sustentabilidade e engenharia elétrica",7,1,3,1
+20,Visão computacional e mecânica,2,1,1,1
+3,Sistemas de informação e aplicações em saúde,1,0,1,0

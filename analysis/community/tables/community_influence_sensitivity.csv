@@ -1,0 +1,2 @@
+comparison,spearman_correlation,top_10_overlap,mean_absolute_rank_shift,max_absolute_rank_shift,hypothesis_spearman_threshold,hypothesis_top_10_overlap_threshold,hypothesis_supported
+equal_weights_vs_betweenness_weighted,0.9963414634146341,10,0.5365853658536586,4,0.8,8,True
