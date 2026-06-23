@@ -1,0 +1,3 @@
+test,metric,observed,null_mean,null_std,z_score,p_value,null_samples,hypothesis_supported,sanity_check,sanity_changed_nodes_mean,sanity_changed_nodes_min,sanity_changed_nodes_max,sanity_changed_nodes_fraction_mean,sanity_node_count
+degree_preserving_rewiring,louvain_modularity,0.7878072886839568,0.20796448038827745,0.0022161585578769423,261.6431961669579,0.009900990099009901,100,True,,,,,,
+partition_shuffle_preserving_community_sizes,mean_internal_density,0.020143873183118246,0.00016229933500285477,4.084077439382781e-05,489.25550861090346,0.000999000999000999,1000,True,shuffled_partition_changed_node_labels,46308.04,46129,46475,0.944830653717457,49012
