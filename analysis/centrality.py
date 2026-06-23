@@ -234,7 +234,7 @@ def build_report(pagerank: dict, in_degree: dict, meta: dict, unicamp_ids: set,
 # ---------------------------------------------------------------------------
 
 def _style_ax(ax, title, xlabel, ylabel, logx=False, logy=False):
-    ax.set_title(title, fontsize=13, fontweight="bold", pad=10)
+    # ax.set_title(title, fontsize=13, fontweight="bold", pad=10)
     ax.set_xlabel(xlabel, fontsize=11)
     ax.set_ylabel(ylabel, fontsize=11)
     ax.spines[["top", "right"]].set_visible(False)

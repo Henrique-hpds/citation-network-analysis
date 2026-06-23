@@ -475,8 +475,7 @@ def build_comparative_report(thresholds_results: list[dict]) -> str:
 # Figures
 # ---------------------------------------------------------------------------
 
-def _style_ax(ax, title, xlabel, ylabel, logy=False):
-    ax.set_title(title, fontsize=13, fontweight="bold", pad=10)
+def _style_ax(ax, xlabel, ylabel, logy=False):
     ax.set_xlabel(xlabel, fontsize=11)
     ax.set_ylabel(ylabel, fontsize=11)
     ax.spines[["top", "right"]].set_visible(False)
@@ -511,15 +510,10 @@ def plot_distances(dist_all: dict, unicamp_ids: set, min_citations: int = None):
     ax.axvline(mean_d, color=PALETTE["red"], linewidth=1.5, linestyle="--",
                label=f"Média = {mean_d:.2f}")
     ax.legend(fontsize=10)
-    if min_citations is not None:
-        title = f"Distância dos Artigos do IC ao Artigo de Alto Impacto Mais Próximo\n(limiar: ≥ {min_citations:,} citações)"
-    else:
-        title = "Distância dos Artigos do IC ao Artigo de Alto Impacto Mais Próximo\n(lista personalizada de artigos)"
     _style_ax(
         ax,
-        title,
         "Distância Mínima (hops)",
-        "Número de Artigos do IC",
+        "Número de Artigos da Unicamp",
     )
     _savefig(fig, os.path.join(FIGURES_DIR, "distances_ic_to_highimpact.png"))
 
@@ -532,15 +526,10 @@ def plot_distances(dist_all: dict, unicamp_ids: set, min_citations: int = None):
     ax.set_yticks(np.arange(0, 1.1, 0.1))
     ax.yaxis.set_major_formatter(ticker.PercentFormatter(xmax=1))
     ax.set_xticks(xs)
-    if min_citations is not None:
-        title = f"CDF — Distância dos Artigos do IC ao Alto Impacto Mais Próximo\n(limiar: ≥ {min_citations:,} citações)"
-    else:
-        title = "CDF — Distância dos Artigos do IC ao Alto Impacto Mais Próximo\n(lista personalizada de artigos)"
     _style_ax(
         ax,
-        title,
         "Distância Mínima (hops)",
-        "Fração Acumulada de Artigos do IC",
+        "Fração Acumulada de Artigos da Unicamp",
     )
     _savefig(fig, os.path.join(FIGURES_DIR, "distances_ic_cdf.png"))
 
@@ -561,18 +550,13 @@ def plot_all_distances(dist_all: dict, unicamp_ids: set, min_citations: int = No
     fig, ax = plt.subplots(figsize=(9, 5))
     ax.bar(xs, ys_all, color=PALETTE["gray"], alpha=0.6, label="Todos os artigos",
            edgecolor="white", linewidth=0.4, width=0.8)
-    ax.bar(xs, ys_ic, color=PALETTE["orange"], alpha=0.85, label="Artigos do IC",
+    ax.bar(xs, ys_ic, color=PALETTE["orange"], alpha=0.85, label="Artigos da Unicamp",
            edgecolor="white", linewidth=0.4, width=0.8)
     ax.set_xticks(xs)
     ax.set_yscale("log")
     ax.legend(fontsize=10)
-    if min_citations is not None:
-        title = f"Distribuição de Distâncias ao Alto Impacto Mais Próximo (Escala Log)\n(limiar: ≥ {min_citations:,} citações)"
-    else:
-        title = "Distribuição de Distâncias ao Alto Impacto Mais Próximo (Escala Log)\n(lista personalizada de artigos)"
     _style_ax(
         ax,
-        title,
         "Distância Mínima (hops)",
         "Número de Artigos (Escala Log)",
         logy=True,
@@ -605,7 +589,6 @@ def plot_distance_vs_year(dist_all: dict, unicamp_ids: set, meta: dict):
         ax.legend(fontsize=10)
     _style_ax(
         ax,
-        "Distância de difusão vs. Ano de publicação\n(Artigos do IC no maior WCC)",
         "Ano de publicação",
         "Distância mínima (hops)",
     )
@@ -631,7 +614,6 @@ def plot_distance_vs_citations(dist_all: dict, unicamp_ids: set, meta: dict):
     ax.set_xscale('log')  # citations vary widely
     _style_ax(
         ax,
-        "Distância de difusão vs. Número de citações globais\n(Artigos do IC no maior WCC)",
         "Número de citações (escala log)",
         "Distância mínima (hops)",
     )

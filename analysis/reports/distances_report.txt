@@ -54,24 +54,24 @@ Ajuste de distribuições estatísticas (distâncias do IC):
 
 Artigos do IC mais próximos de um artigo de alto impacto (top-10):
   dist=1  [1996]  5342 cit.  A new, fast, and efficient image codec based on set partitio
-  dist=2  [2011]   213 cit.  Meta-Recognition: The Theory and Practice of Recognition Sco
-  dist=2  [1994]    55 cit.  Databases for GIS
-  dist=2  [1996]   616 cit.  An image multiresolution representation for lossless and los
   dist=2  [2001]   150 cit.  A New Matrix-Free Algorithm for the Large-Scale Trust-Region
-  dist=2  [1998]   486 cit.  User-Steered Image Segmentation Paradigms: Live Wire and Liv
-  dist=2  [1978]   241 cit.  A Minimax Theorem for Directed Graphs
-  dist=2  [2012]    23 cit.  Learning for Meta-Recognition
   dist=2  [2009]   152 cit.  Robustness of multimodal biometric fusion methods against sp
+  dist=2  [1974]   119 cit.  On the power of multiplication in random access machines
+  dist=2  [1996]   616 cit.  An image multiresolution representation for lossless and los
+  dist=2  [2014]    70 cit.  An Approach to Supporting Incremental Visual Data Classifica
+  dist=2  [1994]    55 cit.  Databases for GIS
+  dist=2  [1978]   241 cit.  A Minimax Theorem for Directed Graphs
   dist=2  [1991]    75 cit.  On the convergence of Han's method for convex programming wi
+  dist=2  [2014]  4829 cit.  Software-Defined Networking: A Comprehensive Survey
 
 Artigos do IC mais distantes de um artigo de alto impacto (top-10):
   dist=17  [2006]    16 cit.  Analysis and Design of Robust Controllers Using the Interval
-  dist=16  [2004]    44 cit.  A hybrid on/off line handwritten signature verification syst
-  dist=16  [2003]    15 cit.  Interval analysis and design of robust pole assignment contr
   dist=16  [2002]    14 cit.  Neural approaches for human signature verification
+  dist=16  [2003]    15 cit.  Interval analysis and design of robust pole assignment contr
+  dist=16  [2004]    44 cit.  A hybrid on/off line handwritten signature verification syst
+  dist=15  [2003]    21 cit.  Multi-objective decision making: towards improvement of accu
   dist=15  [1980]    11 cit.  Neural languages
   dist=15  [2005]    12 cit.  On the design of robust controllers using the interval Dioph
-  dist=15  [2003]    21 cit.  Multi-objective decision making: towards improvement of accu
   dist=14  [2000]    32 cit.  Fixed points of autoassociative morphological memories
-  dist=14  [1992]    18 cit.  Neurofuzzy Controllers
-  dist=14  [2005]    21 cit.  Focusing on Interpretability and Accuracy of a Genetic Fuzzy
+  dist=14  [1997]    21 cit.  A temporal extension to the parsimonious covering theory
+  dist=14  [2000]    72 cit.  Observations on morphological associative memories and the k
