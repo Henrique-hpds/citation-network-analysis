@@ -1,0 +1,71 @@
+================================================================================
+ANÁLISE DE CENTRALIDADE: PAGE RANK E IN-DEGREE
+================================================================================
+
+Total de nós no grafo: 49,012
+Artigos da Unicamp: 1,839
+
+Top 20 artigos globalmente por PageRank:
+  Rank      PageRank    Citações     Ano  Título
+  ----  ------------  ----------  ------  ------------------------------------------------------------
+     1      0.003936      75,671    2017  ImageNet classification with deep convolutional ne
+     2      0.002936       6,014    1983  The Laplacian Pyramid as a Compact Image Code
+     3      0.002890      11,763    1989  Backpropagation Applied to Handwritten Zip Code Re
+     4      0.002681       3,055    1974  The String-to-String Correction Problem
+     5      0.002624      65,474    1965  Fuzzy sets
+     6      0.002509       2,313    1987  Low-dimensional procedure for the characterization
+     7      0.002412      49,332    1989  Genetic algorithms in search, optimization, and ma
+     8      0.002400       5,342    1996  A new, fast, and efficient image codec based on se
+     9      0.002396         106    1970  Spelling correction in systems programs
+    10      0.002244       8,381    2008  OpenFlow
+    11      0.002231       1,290    1989  Quantum computational networks
+    12      0.002211       1,562    1964  A technique for computer detection and correction 
+    13      0.002165       3,891    1970  The Art of Computer Programming. Volume 2: Seminum
+    14      0.002164      20,947    1989  A theory for multiresolution signal decomposition:
+    15      0.002158       5,224    1966  The Algebraic Eigenvalue Problem
+    16      0.002132      57,352    1998  Gradient-based learning applied to document recogn
+    17      0.002006       6,643    1997  Development and validation of a genetic algorithm 
+    18      0.001945      14,389    1976  New directions in cryptography
+    19      0.001931       2,632    1985  A computational procedure for determining energeti
+    20      0.001845      13,744    1991  Eigenfaces for Recognition
+
+Top 20 artigos da Unicamp por PageRank:
+  Rank      PageRank    Citações     Ano  Título
+  ----  ------------  ----------  ------  ------------------------------------------------------------
+     1      0.002400       5,342    1996  A new, fast, and efficient image codec based on se
+     2      0.001465       4,829    2014  Software-Defined Networking: A Comprehensive Surve
+     3      0.000523       1,515    2002  Uncertain rule-based fuzzy logic systems: introduc
+     4      0.000367       1,437    2013  V-REP: A versatile and scalable robot simulation f
+     5      0.000360         616    1996  An image multiresolution representation for lossle
+     6      0.000335         789    2002  Speech enhancement based on a priori signal to noi
+     7      0.000265         241    1978  A Minimax Theorem for Directed Graphs
+     8      0.000244         436    2009  LIPSIN
+     9      0.000225         506    1990  A formulae-as-type notion of control
+    10      0.000181         377    1996  Reliable online human signature verification syste
+    11      0.000180       1,410    2012  Toward Open Set Recognition
+    12      0.000176         821    2003  Ten years of genetic fuzzy systems: current framew
+    13      0.000172         399    2017  Mobility-Aware Application Scheduling in Fog Compu
+    14      0.000161         440    2011  Contributions to the study of SMS spam filtering
+    15      0.000149         520    2011  Theory and Practice of Bloom Filters for Distribut
+    16      0.000139         422    2011  A Survey of Large Scale Data Management Approaches
+    17      0.000136         136    2008  TripleBeat
+    18      0.000133         486    1998  User-Steered Image Segmentation Paradigms: Live Wi
+    19      0.000117         450    2003  Targeting key alteration minerals in epithermal de
+    20      0.000117         145    1987  Systematization of finite many-valued logics throu
+
+Correlação entre in-degree (local) e cited_by_count (global):
+  Pearson r = 0.5457
+
+Estatísticas de PageRank:
+  Mínimo    : 6.192972e-06
+  Máximo    : 3.935795e-03
+  Média     : 2.040317e-05
+  Mediana   : 7.875762e-06
+  Desvio-padrão: 7.940006e-05
+
+Estatísticas de in-degree:
+  Mínimo    : 0
+  Máximo    : 3913
+  Média     : 7.86
+  Mediana   : 2.0
+  Desvio-padrão: 33.30
