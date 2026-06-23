@@ -2,57 +2,76 @@
 DISTÂNCIAS DE DIFUSÃO DE CONHECIMENTO: ALTO IMPACTO → IC/UNICAMP
 ======================================================================
   Modelo: aresta A→B = 'A cita B'; conhecimento flui de B para A.
-  Distância de difusão de H até P = menor nº de hops no caminho
-  P→...→H no dígrafo original (BFS no grafo transposto a partir de H).
+  Distância seguida = menor nº de hops no caminho
+  H→...→P no dígrafo original (BFS no grafo original a partir de H).
 
-  Limiar de alto impacto : ≥ 100,000 citações
-  Artigos de alto impacto: 3
+  Artigos de alto impacto: 460 (lista personalizada)
+  Artigos de alto impacto: 460
   Artigos da Unicamp      : 1,885
-    — alcançados pelo BFS : 518
-    — não alcançados      : 1,367 (sem caminho de difusão)
-  Tamanho do maior WCC    : 87,901
+    — alcançados pelo BFS : 239
+    — não alcançados      : 1,646 (sem caminho de difusão)
+  Tamanho do maior WCC    : 49,012
 
 Estatísticas das distâncias (artigos do IC no maior WCC):
   Mínima  : 1
-  Máxima  : 10
-  Média   : 3.19
-  Mediana : 3.0
-  Desvio padrão: 1.52
+  Máxima  : 17
+  Média   : 6.31
+  Mediana : 5.0
+  Desvio padrão: 3.48
 
 Distribuição das distâncias:
    Distância   # artigos IC   % artigos IC
   ----------  -------------  -------------
-           1             42           8.1%
-           2            156          30.1%
-           3            135          26.1%
-           4             93          18.0%
-           5             64          12.4%
-           6              6           1.2%
-           7             13           2.5%
-           8              5           1.0%
-           9              3           0.6%
-          10              1           0.2%
+           1              1           0.4%
+           2             18           7.5%
+           3             22           9.2%
+           4             38          15.9%
+           5             50          20.9%
+           6             30          12.6%
+           7             21           8.8%
+           8             14           5.9%
+           9              6           2.5%
+          10              1           0.4%
+          11              5           2.1%
+          12              9           3.8%
+          13             10           4.2%
+          14              7           2.9%
+          15              3           1.3%
+          16              3           1.3%
+          17              1           0.4%
+
+Ajuste de distribuições estatísticas (distâncias do IC):
+  Distribuição geométrica truncada: P(d) = (1-p)^(d-1) * p
+    p = 0.1584
+    KS-test statistic = nan
+    KS-test p-value = nan
+    R² = 0.0288
+  Distribuição de Poisson truncada: P(d) = (λ^d * e^-λ) / (d! * (1-e^-λ)) para d≥1
+    λ = 6.3138
+    KS-test statistic = nan
+    KS-test p-value = nan
+    R² = 0.6153
 
 Artigos do IC mais próximos de um artigo de alto impacto (top-10):
-  dist=1  [2019]    53 cit.  Bug report severity level prediction in open source software
-  dist=1  [2018]    12 cit.  DOCToR: The Role of Deep Features in Content-Based Mammograp
-  dist=1  [2018]    23 cit.  A Soft Computing Framework for Image Classification Based on
-  dist=1  [2018]    20 cit.  Connecting the dots: Toward accountable machine-learning pri
-  dist=1  [2021]    38 cit.  Machine learning techniques applied to solar flares forecast
-  dist=1  [2024]    15 cit.  Computer Vision Model Compression Techniques for Embedded Sy
-  dist=1  [2016]    12 cit.  On the Reconstruction of Text Phylogeny Trees: Evaluation an
-  dist=1  [2021]    19 cit.  Transformation-Aware Embeddings for Image Provenance
-  dist=1  [2022]   100 cit.  Detect and Locate: Exposing Face Manipulation by Semantic- a
-  dist=1  [2020]    42 cit.  Leveraging Shape, Reflectance and Albedo From Shading for Fa
+  dist=1  [1996]  5342 cit.  A new, fast, and efficient image codec based on set partitio
+  dist=2  [2001]   150 cit.  A New Matrix-Free Algorithm for the Large-Scale Trust-Region
+  dist=2  [2009]   152 cit.  Robustness of multimodal biometric fusion methods against sp
+  dist=2  [1974]   119 cit.  On the power of multiplication in random access machines
+  dist=2  [1996]   616 cit.  An image multiresolution representation for lossless and los
+  dist=2  [2014]    70 cit.  An Approach to Supporting Incremental Visual Data Classifica
+  dist=2  [1994]    55 cit.  Databases for GIS
+  dist=2  [1978]   241 cit.  A Minimax Theorem for Directed Graphs
+  dist=2  [1991]    75 cit.  On the convergence of Han's method for convex programming wi
+  dist=2  [2014]  4829 cit.  Software-Defined Networking: A Comprehensive Survey
 
 Artigos do IC mais distantes de um artigo de alto impacto (top-10):
-  dist=10  [2019]    31 cit.  A fog-enabled smart home solution for decision-making using 
-  dist=9  [2017]    15 cit.  Ensemble of metamodels: extensions of the least squares appr
-  dist=9  [2024]    15 cit.  Relations between supply chain performance and circular econ
-  dist=9  [2018]    29 cit.  A Low-Cost Smart Home Automation to Enhance Decision-Making 
-  dist=8  [2019]    12 cit.  A Distance and Position-based Caching Discovery Protocol for
-  dist=8  [2015]    12 cit.  Indoor patient monitoring through Wi-Fi and mobile computing
-  dist=8  [2019]    22 cit.  Interpath Contention in MultiPath TCP Disjoint Paths
-  dist=8  [2015]    43 cit.  Ensemble of metamodels: the augmented least squares approach
-  dist=8  [2020]    12 cit.  Smart contracts applied to a functional architecture for sto
-  dist=7  [2020]    58 cit.  LadderLeak: Breaking ECDSA with Less than One Bit of Nonce L
+  dist=17  [2006]    16 cit.  Analysis and Design of Robust Controllers Using the Interval
+  dist=16  [2002]    14 cit.  Neural approaches for human signature verification
+  dist=16  [2003]    15 cit.  Interval analysis and design of robust pole assignment contr
+  dist=16  [2004]    44 cit.  A hybrid on/off line handwritten signature verification syst
+  dist=15  [2003]    21 cit.  Multi-objective decision making: towards improvement of accu
+  dist=15  [1980]    11 cit.  Neural languages
+  dist=15  [2005]    12 cit.  On the design of robust controllers using the interval Dioph
+  dist=14  [2000]    32 cit.  Fixed points of autoassociative morphological memories
+  dist=14  [1997]    21 cit.  A temporal extension to the parsimonious covering theory
+  dist=14  [2000]    72 cit.  Observations on morphological associative memories and the k
